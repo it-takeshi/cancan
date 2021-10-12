@@ -1,0 +1,167 @@
+/* 文字化け防ぐ */
+/* @charset "UTF-8";
+
+/* 基本設定 */
+/* 下記の＊は全ての要素という意味 */
+/* * {
+	margin: 0;
+}
+img {
+	width: 100%;
+	height: auto;
+} */ 
+
+/* ページ全体の設定 */
+/* body {
+	display: grid;
+	grid-template-columns: 20px 1fr 20px;
+  
+	grid-template-rows: 
+									[head] 100px
+									[title] auto
+									[sub] auto
+									[recent] auto
+									[foot] 100px;
+	grid-row-gap: 20px;
+	row-gap: 20px;
+  font-family: sans-serif;
+  background-color: #FFE382;
+  /* background-color: #82E8FF; */
+  /* background-color: #A9324B;  */
+  /* background-color: #263583; */
+/* } */ 
+/* 
+/* parent_pageページ */
+/* .parent_page {
+	display: grid;
+	grid-template-columns: 20px 1fr 20px;
+	grid-template-rows: 
+									[head] 100px
+									[button] auto
+									[completed_task_output] auto
+									[nocompleted_task_output] auto
+									[foot] 100px;
+		row-gap: 20px;
+  font-family: sans-serif;
+		background-color: #FFE382;
+
+} */
+/* 
+/* パーツの配置*/
+/* p74 <body>の1階層下の全ての要素＊を適用するためbody > *としている */
+/* .parent_page > * {
+	grid-column: 2 / -2;
+} */
+
+
+/* ヘッダー */
+/* header {
+	grid-row: head;
+  justify-self: center;
+	align-self: center;
+	font-size: 40px;
+	color: #ffffff; 
+  font-family: 'Raleway', sans-serif;
+} */
+
+/* header a {
+  color: inherit;
+  text-decoration: none;
+} */
+
+/* ナビゲーションメニュー */
+/* nav {
+	grid-row: head;
+  justify-self: center;
+  align-self: flex-end;
+} */
+
+/* nav ul {
+	list-style-type: none;
+	padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 20px;
+	
+} */ 
+
+/* nav a {
+	color: #ffffff; 
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+nav a:hover {
+	color: #ef9504;
+} */
+/* ナビゲーションメニューここまで*/
+
+/* 
+ a {
+	color: #eeeeee;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+a:hover {
+	color: #ef9504; */
+/* } */
+/* 
+
+.button{
+  grid-row:button;
+
+} */
+
+ /* .button ul {
+	list-style-type: none;
+	padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 20px;
+	
+} */
+
+/* .completed_task_output{
+  grid-row:completed_task_output;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap:20px 10px;
+} */
+
+/* .nocompleted_task_output{
+  grid-row:nocompleted_task_output;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:20px 10px;
+} */
+
+
+/* フッター */
+/* footer {
+	grid-row: foot;
+  justify-self: center;
+  align-self: center;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+} */
+
+/* フッターのバー */
+/* body::after {
+	content: "";
+	background-color: #eeeeee;
+	grid-column: 1 / -1;
+	grid-row: foot;
+	z-index: -1;
+} */
+
+
+/* 
+input[type="submit"]{
+  background-color: #ffaa00;
+  border:none;
+  -webkit-appearance: none;
+  
+}  */
