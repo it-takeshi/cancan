@@ -10,52 +10,63 @@
 
 </head>
 <body class="top">
-
-    <header>Can × Can</header>
-    <!--  -->
-    <nav>
-        <ul>
-          <li><a href="#">トップ</a></li>
-          <li><a href="#">サイトについて</a></li>
-          <li><a href="#">お問い合わせ</a></li>
-        </ul>
-    </nav>
-    <!--  -->
+    <header>
+        <p><a href="#">Can × Can</a></p>
+    </header>
+    <!-- <nav>
+            <ul>
+            <li><a href="#">トップ</a></li>
+            <li><a href="#">サイトについて</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+            </ul>
+    </nav> -->
     <!--  -->
     <figure class="hero">
-      <img src="images/dog1.jpg" width="100px" alt="できる！">
+      <img src="images/dog1.jpg" width="100px" alt="できる！" class="circle">
     </figure>
-        <!--  -->
-    <!--  -->
+
     <section>
-          <h2>保護者用メニュー</h2>
-          <div>
+          <h2 class="parent_menu">保護者用メニュー</h2>
+
+          <div class="parent_block">
+            <p> 
+              <a href="account_create/parent_create.php">新規登録</a>
+            </p>
+            <p> 
+              <a href="log/parent_login.php">ログイン</a>
+            </p>
+          </div>
+
+          <h2 class="child_menu">お子様用メニュー</h2> 
+          <div class="child_block">
+            <p> 
+              <a href="log/child_login.php">ログイン</a>
+            </p>
+          </div>
+
+
+          <!-- <div>
             <a href="account_create/parent_create.php">
               <figure><img src="images/star-6577079__480.webp" alt=""></figure>
               <h3>新規登録</h3>
             </a>
           </div>
-
           <div>
             <a href="log/parent_login.php">
               <figure><img src="images/star-6577079__480.webp" alt=""></figure>
               <h3>ログイン</h3>
             </a>
           </div>
-
           <div>
           <h2 class="child_menu">お子様用メニュー</h2> 
             <a href="log/child_login.php">
               <figure><img src="images/star-6577079__480.webp" alt=""></figure>
               <h3>ログイン</h3>
             </a>
-          </div>
+          </div> -->
     </section>
     <!--  -->
 <!--  -->
 <footer>© Can & Can</footer>
-<!--  -->
-
-
 </body>
 </html>

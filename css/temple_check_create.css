@@ -1,0 +1,136 @@
+/* 文字化け防ぐ */
+@charset "UTF-8";
+
+/* テキストの自動拡大化を無効化 */
+body{
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* 基本設定 */
+/* 下記の＊は全ての要素という意味 */
+* {
+	margin: 0;
+}
+img {
+	width: 100%;
+	height: auto;
+}
+
+body{
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows:
+  [head] 100px
+  [check] auto
+  [submit] auto
+  [div] auto
+  [foot] 100px;
+  row-gap: 20px;
+  font-family: sans-serif;
+  background-color: #FFE382;
+}
+
+body> *{
+  grid-column: 2 / -2;
+}
+
+
+header{
+  grid-row: head;
+  grid-column: 1 / -1;
+  background-color: #373870;
+}
+
+header p {
+  padding-top: 25px;
+  justify-content: end;
+	text-align: center;
+	font-size: 40px;
+	color:#F5F5F5;
+  font-family: 'Raleway', sans-serif;
+}
+
+header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.check{
+  grid-row: check;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+.check h1{
+  grid-column: 1 /-1 ;
+}
+
+.check img{
+  width: 10px;
+}
+.submit{
+  grid-row: submit;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+form p {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+input[type="submit"]{
+  background-color:#484B7E;
+  color:#F5F5F5;
+  border: none;
+  -webkit-appearance: none;
+}
+
+div{
+  grid-row: div;
+  text-align: center;
+}
+div a {
+ color:#F5F5F5;
+ text-decoration: none;
+ border: solid 1px #ffffff;
+ padding: 10px 10px;
+ display: inline-block;
+ margin-top: 10px;
+ border-radius: 10px;
+ background-color:#484B7E;
+}
+
+div a:hover{
+ background-color: crimson;
+}
+
+
+
+/* フッター */
+footer{
+  grid-row: foot;
+  justify-self: center;
+  align-self: center;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  color:#F5F5F5;
+
+}
+/* フッターのバー */
+ /* 擬似要素を作成 */
+body::after{
+  grid-row: foot;
+  grid-column: 1 / -1;
+  content: '';
+  background-color:#484B7E;
+  z-index: -1;
+
+}

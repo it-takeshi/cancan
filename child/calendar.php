@@ -153,31 +153,32 @@ $child_name =$_SESSION['child_name'];
     <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
-<!-- ↑順番で処理がされる。なので同じ部分を処理したときは最後のcss/style.cssが処理され、その内容が反映 -->
+
 </head>
 <body class="d-flex flex-column h-100">
 
-<!-- class 名はすべて Bootstrap で指定されている。これを変更するとレイアウトが反映されなくなる -->
 <header>
     <nav class="navbar navbar-expand-md  navbar-light bg-light  fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="calendar.php"><?= $child_name ?>君のカレンダー</a>
+            <a class="navbar-brand" href="calendar.php"><?= $child_name ?>さんのカレンダー</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="child_task_input.php"><i class="fa fa-plus"></i> 追加</a>
+                        <a class="nav-link" href="child_task_input.php"><i class="fa fa-plus"></i> ついか</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="search.php"><i class="fa fa-search"></i> 検索</a>
+                        <a class="nav-link" href="search.php"><i class="fa fa-search"></i> えらぶ</a>
                     </li>
-                    <!-- <li><p><?= $child_name ?>君のマイページ</p></li>  -->
+                    <li class="nav-item">
+                                <a class="nav-link" href="../log/logout.php"><i class="fas fa-sign-out-alt"></i> ログアウト</a>
+                            </li>
                 </ul>
                 <form class="d-flex">
-                    <input type="text" name="ym" class="form-control me-2" placeholder="年月を選択" id="ymPicker">
-                    <button class="btn btn-outline-dark text-nowrap" type="submit">表示</button>
+                    <input type="text" name="ym" class="form-control me-2" placeholder="年月をえらぶ" id="ymPicker">
+                    <button class="btn btn-outline-dark text-nowrap" type="submit">ひょうじ</button>
                 </form>
             </div>
         </div>
@@ -225,7 +226,7 @@ $child_name =$_SESSION['child_name'];
 
 <footer class="footer py-3 mt-auto bg-light">
     <div class="container text-center">
-        <span class="text-muted">&copy; My Calendar</span>
+        <span class="text-muted">&copy; Can ✖️ Can</span>
     </div>
 </footer>
     

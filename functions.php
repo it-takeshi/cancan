@@ -1,12 +1,20 @@
 <?php
 
+// ユーザー名：b1d3de227d6eca
+// パスワード：bc0de00a
+// ホスト名：us-cdbr-east-04.cleardb.com
+// データベース名：heroku_e72eea33a62837b
+
+
+
+
 function connect_to_db()
 {
-                        //↓接続するDB名を入力 今回利用DBは「can_can」
-      $dbn = 'mysql:dbname=can_can;charset=utf8;port=3306;host=localhost';
-      $user = 'root';
-      // ↓今回MAMPを利用している。$pwd = 'root';となる
-      $pwd = 'root';
+                    
+      $dbn = 'mysql:dbname=heroku_e72eea33a62837b;charset=utf8;port=3306;host=us-cdbr-east-04.cleardb.com';
+      $user = 'b1d3de227d6eca';
+      
+      $pwd = 'bc0de00a';
 
       try {
         return new PDO($dbn, $user, $pwd);

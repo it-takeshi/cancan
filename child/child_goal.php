@@ -51,90 +51,105 @@ $output = "<tr><td></td>{$completed_task[$i]}<td></td></tr>";
 for ($i = 0; $i < count($completed_task); $i++) {
   // count()関数で$completed_taskの配列の数を取る
     $output .= "<tr>";
-    $output .= "<td><img src='{$completed_task[$i]["image"]}' height='200px' ></td>";
-    $output .= "<td><img src='{$completed_task[$i]["image"]}' height='200px' ></td>";
-    
+    // $output .= "<td><img src='{$completed_task[$i]["image"]}' height='200px' ></td>";
+    // $output .= "<td><img src='{$completed_task[$i]["image"]}' height='200px' ></td>";
+    $output .= "<td><img src='../images/smiley-1635449__340.webp' height='10px'></td>";
     $output .= "</tr>";
   }
 
+  $point = '';
+    
+  $point .=  count($completed_task);
+  // var_dump($point);
+  // exit();
+  // $parent_checked_task_output .= "<td>{$parent_checked_task[$i]["task_name"]}</td>";
+// var_dump($total);
+// exit();
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="ja" class="h-100">
 <head>
      <!-- Stylesheets -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+  
     <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="../css/animejs.css">   
+<link rel="stylesheet" href="../css/child_goal.css">  
+
 <!-- ↑順番で処理がされる。なので同じ部分を処理したときは最後のcss/style.cssが処理され、その内容が反映 -->
 <style>
-
-  ul{
-    list-style: none;
-  }
-
-  body{
-      background-color: #FFE382;
-      /* height: 667px; */
-    }
-
-     h2 a i{
-       color: red;
-     }
-
 </style>
 </head>
 
+<body>
+      <header>
+        <ul>
+          <li>  <button onclick="changeMenu()" class="c-button">たっせいを<br>チェック </button></li>
+          <li> <strong><?= $point ?>ポイント</strong></li>
+          <li> <a href="child_page.php?ymd='.date('Y-m-d')">もどる</a></li>
 
-<main>
-<div>○○ポイント</div>
-<div>画像やデータを表示</div>
-<h1><a href="child_page.php"><i class="fas fa-hand-paper"></i></a></h1>
+          <!-- <a href="calendar.php?ym=<?= $prev; ?>">&lt;</a>
 
-<table>
-      <tbody>
-        <?= $output ?>
-      </tbody>
-    </table>
-<!-- <ul><?= $output ?></ul> -->
-<div>
-  <!-- <ul id="result"></ul> -->
-</div>
-    
-  </main> 
-    <footer></footer>
+          header('Location:child_page.php?ymd='.date('Y-m-d', strtotime($start_datetime))); -->
+
+        </ul>
+      </header>
+     
+      <section >
+      <div class="output2"></div>
+
+                <div class="output"><?= $output ?></div>
+      </section>
+     
+      <!-- <div class="squere">
+                          <?= $output ?>
+        </div>  -->
+
+        <!-- <footer></footer> -->
+  
+</body>
+
 <!-- java script! -->
-<script src="../js/bootstrap.min.js"></script>
-  <script src="../js/jquery-3.6.0.min.js"></script>
-  <script src="../js/moment.min.js"></script>
-  <script src="../js/ja.js"></script>
-  <script src="../js/bootstrap-datetimepicker.min.js"></script>
 
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/anime.min.js" ></script>
   <script>
 
-
-    $(function () {
-        $('#ymPicker').datetimepicker({
-            format: 'YYYY-MM',
-            locale: 'ja'
-        });
-        $('.task-datetime').datetimepicker({
-        dayViewHeaderFormat: 'YYYY年 MMMM',
-        format: 'YYYY/MM/DD HH:mm',
-        locale: 'ja',
-      });
-      $('.search-date').datetimepicker({
-        format: 'YYYY/MM/DD',
-        locale: 'ja'
-        });
-      $('#selectColor').bind('change', function(){
-        $(this).removeClass();
-        $(this).addClass('form-select').addClass($(this).val());
-      });
+    var test1 = anime({
+      targets: ['.output'],
+      translateY: '14rem',
+      // scale: [.75, .9],
+      delay: function(el, index) {
+        return index * 80;
+      },
+      direction: 'alternate',
+      loop: true
     });
+
+
+    var test2 =  anime({
+  targets:  ['.output2'],
+  width: '100%', // -> from '28px' to '100%',
+  easing: 'easeInOutQuad',
+  direction: 'alternate',
+  loop: true
+});
+
+
+    function changeMenu(){
+      let menus =document.getElementsByClassName('menu');
+      console.log(menus);
+      // HTMLCollection(3) [p.menu, p.menu, p.menu]
+      // 0: p.menu
+      // 1: p.menu
+      // length: 2
+      // [[Prototype]]: HTMLCollection
+      menus[0].style.color = '#ff0000';
+      menus[1].innerHTML ='ラーメン定食';
+      menus[2].remove();
+      };
 </script>
 
 </body>

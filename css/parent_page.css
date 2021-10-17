@@ -1,4 +1,3 @@
-/* 文字化け防ぐ */
 @charset "UTF-8";
 
 /* テキストの自動拡大化を無効化 */
@@ -6,9 +5,6 @@ body{
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
-
-/* 基本設定 */
-/* 下記の＊は全ての要素という意味 */
 * {
 	margin: 0;
 }
@@ -17,7 +13,7 @@ img {
 	height: auto;
 }
 
-.parent_page{
+body{
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows: 
@@ -25,6 +21,7 @@ img {
             [button] auto
             [completed_task_output] auto
             [nocompleted_task_output] auto
+            [div] auto
             [foot] 100px;
   row-gap: 20px;
   font-family: sans-serif;
@@ -35,59 +32,54 @@ body > *{
     grid-column: 2 / -2;
 }
 
+
 header{
 	grid-row: head;
   justify-self: center;
-	align-self: center;
-	font-size: 40px;
-	color:#F5F5F5;
+  align-self: center;
+  font-size: 40px;
+  color:#F5F5F5;
+  grid-column: 1 / -1;
+  background-color:#373870;
   font-family: 'Raleway', sans-serif;
 }
 
-header a {
-  color: inherit;
-  text-decoration: none;
-}
-
-nav{
-  grid-row: head;
-  justify-self: center;
-  align-self: flex-end;
-  
-}
-
-nav ul{
-display: grid;
-grid-auto-flow: column;
-column-gap: 20px;
-list-style-type: none;
-padding: 0;
-
-}
-
-nav a {
-  color:#F5F5F5;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: bold;
-}
-nav a:hover{
-  color:#484B7E;
-}
-
 .button{
-	grid-row: button;
-	justify-self: center;
+  grid-row: button;
 }
 
-.button ul{
+.button nav{
+  justify-self: center;
+}
+
+.button nav ul{
+  display: grid;
+  padding: 0;
+  /* grid-column: 2 / -2; */
+  grid-auto-flow: column;
+  row-gap: 20px;
+  column-gap: 10px;
+  list-style-type: none;
+padding: 0;
+}
+
+.button h3 ,p{
+  grid-column: 1 / -1;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 20px;
+  color: #373870;
+}
+
+/* .button ul{
 	display: grid;
-grid-auto-flow: rows;
+grid-auto-flow: column;
 column-gap: 5px;
 list-style-type: none;
 padding: 0;
-
-}
+font-size: 10px;
+} */
 
 .button a {
   color:#F5F5F5;
@@ -97,7 +89,7 @@ padding: 0;
   display: inline-block;
   margin-top: 10px;
   border-radius: 10px;
-  background-color:#484B7E;
+  background-color: #373870;
 }
 
 .button a:hover{
@@ -127,6 +119,25 @@ padding: 0;
 	height: auto;
 }
 
+div{
+  grid-row: div;
+  text-align: center;
+}
+div a {
+ color:#F5F5F5;
+ text-decoration: none;
+ border: solid 1px #ffffff;
+ padding: 10px 10px;
+ display: inline-block;
+ margin-top: 10px;
+ border-radius: 10px;
+ background-color: #373870;
+}
+
+div a:hover{
+ background-color: crimson;
+}
+
 /* フッター */
 footer{
   grid-row: foot;
@@ -143,7 +154,7 @@ body::after{
   grid-row: foot;
   grid-column: 1 / -1;
   content: '';
-  background-color:#484B7E;
+  background-color: #373870;
   z-index: -1;
 
 }

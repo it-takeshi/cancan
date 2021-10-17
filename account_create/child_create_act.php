@@ -74,5 +74,6 @@ if ($status == false) {
     }
   }
 }
-header('Location:../parent/parent_page.php');
+header('Location:../log/parent_login.php');
+// header('Location:../parent/parent_page.php');
 exit();

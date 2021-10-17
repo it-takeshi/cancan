@@ -45,8 +45,8 @@
 
       </section>
 
-      <div class="goto_home">
-            <a class="button" href="../home.php">ホーム画面へ</a>
+      <div class="">
+            <a class="button" href="../parent/parent_page.php">マイページ画面へ</a>
       </div>
 
       <footer>© Can & Can</footer>

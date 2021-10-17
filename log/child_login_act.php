@@ -88,11 +88,11 @@ if ($status == false) {
             $_SESSION['parent_id'] = $parent_data['user_id'];
                                  // ↑上の子供の値の取り方と同じ。親のusers_tableのuser_id（番号）を取っている
 
-              header('Location:../child/child_page.php');
+              header('Location:../child/child_page.php?ymd=');
 
             // header('Location:../child_page.php?ymd='.date('Y-m-d', strtotime($start_datetime)));
             // ↑http://localhost/support_growth/child_page.php?ymd=1970-01-01となり、ブラウザnot found表示
-            exit();
+           
           }
         }
       }

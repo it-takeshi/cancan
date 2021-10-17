@@ -17,6 +17,23 @@ $start_datetime = $_POST['start_datetime'];
 // $task_time = $_POST['task_time'];
 $color = $_POST['color'];
 $image = $_POST['filename_to_save'];
+
+// 参考
+    // herokuデプロイではDBに入れている画像は反映されない。元々の../upload〜pngなどの
+    // データが反映されない
+    // なのでbase64で エンコードして特別な文字列でDBに保存する必要がある
+    // $str = 'This is an encoded string';
+        // echo base64_encode($str);
+        // 出力 VGhpcyBpcyBhbiBlbmNvZGVkIHN0cmluZw==
+
+// $image = base64_encode($pre_image);
+// var_dump($image);
+// exit();
+// string(80) "Li4vdXBsb2FkLzIwMjExMDE0MDMyMzQzYzExOTcwZWRiMmIxMWFjNzY4MGU0ZTgwNzAzMTBjODUucG5n"
+
+// 表示する際はimgタグのsrc属性に「data:image/png;base64,」という値をつける。（base64でエンコードされた画像を表示するという記法）
+
+
 $task_status = "0";
 
 $sql = 'INSERT INTO new_task_table (task_id, child_id, parent_id, task_name, start_datetime, color, image, task_status, created_at, updated_at) VALUES (NULL, :child_id, :parent_id, :task_name, :start_datetime, :color, :image, :task_status, sysdate(), sysdate())';

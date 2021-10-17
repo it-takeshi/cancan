@@ -44,6 +44,6 @@ if ($val) {
     $_SESSION['user_id'] = $result['user_id']; //sessionにこれ入れることで、どこからでも使えるように。
   }
   // header('Location:../parent/parent_page.php');
-  header('Location:../log/parent_login.php');
+  header('Location:child_create.php');
   exit();
 }

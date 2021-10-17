@@ -1,7 +1,6 @@
 <?PHP
 session_start();
 include("../functions.php");
-include("../config.php");
 check_session_id();
 $pdo = connect_to_db();
 
@@ -18,6 +17,16 @@ $color = $_POST['color'];
     $extension = pathinfo($uploaded_file_name, PATHINFO_EXTENSION);
     $unique_name = date('YmdHis') . md5(session_id()) . "." . $extension;
     $filename_to_save = $directory_path . $unique_name;
+
+    // 参考
+    // herokuデプロイではDBに入れている画像は反映されない。元々の../upload〜pngなどの
+    // データが反映されない
+    // なのでbase64で エンコードして特別な文字列でDBに保存する必要がある
+    // $str = 'This is an encoded string';
+        // echo base64_encode($str);
+        // 出力 VGhpcyBpcyBhbiBlbmNvZGVkIHN0cmluZw==
+
+
     if (is_uploaded_file($temp_path)) {
 
         if (move_uploaded_file($temp_path, $filename_to_save)) {
@@ -31,6 +40,8 @@ $color = $_POST['color'];
     } else {
     exit('error:画像が送信されていません');
     }
+
+    // $image = base64_encode($filename_to_save);
 
 ?>
 
@@ -82,7 +93,7 @@ $color = $_POST['color'];
         <label for="task_name">やること</label>
         </p>
         <p>
-            <?= $task_name ?>
+            <?= $task_name ?> 
         </p>
         
         <p>
@@ -96,7 +107,11 @@ $color = $_POST['color'];
         <label for="upfile">しゃしん</label>
         </p>
         <p>
-            <image src="<?= $filename_to_save ?>" width="50px"></image>
+            <image src="<?= $filename_to_save ?>" width="50px"></image> 
+         
+            <!-- ↓ PHP側で$image = base64_encode($filename_to_save);したが 画像表示されず  -->
+            <!-- <img src="data:image/png;base64,<?= $image ?>" width="30px"> -->
+            
         </p>
         
 

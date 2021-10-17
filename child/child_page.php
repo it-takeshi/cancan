@@ -1,7 +1,6 @@
 <?PHP
 session_start();
 include("../functions.php");
-include("../config.php");
 check_session_id();
 $pdo = connect_to_db();
 $user_id = $_SESSION['user_id'];
@@ -90,32 +89,32 @@ if ($status == false) {
 // var_dump($parent_checked_task);
 // exit(); 親がチェック済みのタスクの一覧が配列で取得
 if ($parent_checked_task) {
-  $parent_checked_task_output ="<tr><td>いつから</td><td>すること</td><td class='image'></td><td></td>td></td></tr>";
+  $parent_checked_task_output ="<tr><td>できたね！</td><td></td><td class='image'></td><td></td></tr>";
   for ($i = 0; $i < count($parent_checked_task); $i++) {
      // count()関数で$parent_checked_taskの配列の数を取る
+
+    
+    $start_time = date('H:i', strtotime($parent_checked_task[$i]["start_datetime"]));
+  
     $parent_checked_task_output .= "<tr>";
 
-    $parent_checked_task_output .= "<td>{$parent_checked_task[$i]["start_datetime"]}</td>";
+    // $parent_checked_task_output .= "<td>{$parent_checked_task[$i]["start_datetime"]}</td>";
+    $parent_checked_task_output .= "<td>{$start_time}</td>";
 
     $parent_checked_task_output .= "<td>{$parent_checked_task[$i]["task_name"]}</td>";
 
-    $parent_checked_task_output .= "<td><img src='{$parent_checked_task[$i]["image"]}' width='50px'></td>";
+    $parent_checked_task_output .= "<td><img src='{$parent_checked_task[$i]["image"]}' width='30px'></td>";
     
-    $parent_checked_task_output .= "<td><img src='../images/positive-1015517__480.webp' width='40px'></td>";
-    $parent_checked_task_output .= "<td><img src='../images/smiley-1635449__340.webp' width='40px'></td>";
-    $parent_checked_task_output .= "<td></td>";
-
-    
+    $parent_checked_task_output .= "<td><img src='../images/good.jpg' width='20px'></td>";
+    // $parent_checked_task_output .= "<td><img src='../images/smiley-1635449__340.webp' width='40px'></td>"; 
     $parent_checked_task_output .= "</tr>";
   }
 } else {
-  $parent_checked_task_output = "<tr><td class='image'></td><td>できたこと今はありません！</td><td></td><td></td><td></td></tr>";
+  $parent_checked_task_output = "<tr><td class='image'></td><td></td><td></td><td></td><td></td></tr>";
 }
-
 }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -132,14 +131,13 @@ if ($parent_checked_task) {
 </head>
 
 <body class="">
-    
     <!-- cssでbodyにdisplay:grid;設定をするとbodyタグの1階層下の大枠タグ <></>が -->
     <!-- グリッドに配置するパーツと認識される -->
-        
     <header>
             <nav class="navbar navbar-expand-md  navbar-light bg-light  fixed-top">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="calendar.php" >カレンダー</a>
+                    <a class="navbar-brand" href="calendar.php" ><i class="far fa-calendar-alt"></i>カレンダー</a>
+                    <p><?= $user_data['name'] ?>さんの<br>マイページ</p>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -149,16 +147,9 @@ if ($parent_checked_task) {
                                 <a class="nav-link" href="child_task_input.php"><i class="fa fa-plus"></i> ついか</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="search.php"><i class="fa fa-search"></i> 検索</a>
+                                <a class="nav-link" href="../log/logout.php"><i class="fas fa-sign-out-alt"></i> ログアウト</a>
                             </li>
-                            <li><h2><?= $user_data['name'] ?>君のマイページ</h2></li>
-
-
                         </ul>
-                        <form class="d-flex" action="calendar.php">
-                            <input type="text" name="ym" class="form-control me-2" placeholder="年月をえらぶ" id="ymPicker">
-                            <button class="btn btn-outline-dark text-nowrap" type="submit">ひょうじ</button>
-                        </form>
                     </div>
                 </div>
             </nav>
@@ -185,7 +176,6 @@ if ($parent_checked_task) {
                     </tr>
                 </thead>
 
-    <!-- .PHPの処理をhtml側で埋め込む -->
                 <tbody>
                     <?php foreach ($my_task as $row): ?>
                         <?php
@@ -199,8 +189,8 @@ if ($parent_checked_task) {
                     <td><?= $start; ?> ~ <?= $end; ?></td>
                     <td><?= $row['task_name']; ?></td>
                     <td>
-                        <a href="edit.php?id=<?= $row['task_id']; ?>" class="btn btn-sm btn-link">
-                        <!-- 編集 -->
+                        <!-- <a href="edit.php?id=<?= $row['task_id']; ?>" class="btn btn-sm btn-link">
+                        編集 -->
                         <img src='<?= $row['image'];?> ' width="50px"></a>
                             <!--↑このファイル名ではない対応用のリンク先phpファイルを作成しないといけない -->
                     </td>
@@ -208,7 +198,7 @@ if ($parent_checked_task) {
                     <td>
                         <form action='task_complete.php' method='POST'>
                         <input type="hidden" id="star" name='task_id' value="<?= $row['task_id'] ?>"> 
-                        <button id='complete_btn' type='submit' >
+                        <button id='complete_btn' type='submit' class="c-button">
                                 <img src="../images/star-6577079__480.webp" alt="" width="50px">
                                 <!-- <img src="../images/bells-2957570__340.webp" alt="" width="40px"> -->
                         </button> 
@@ -217,10 +207,10 @@ if ($parent_checked_task) {
 
                         <!-- <a href=""><i class="far fa-smile-wink"></i></a> -->
                     
-                        <a href="javascript:void(0);" onclick="var ok=confirm('この予定を削除してもよろしいですか？'); 
+                    <a href="javascript:void(0);" onclick="var ok=confirm('このよていを消してよろしいですか？'); 
                         if(ok) location.href='child_task_delete.php?id=<?= $row['task_id']; ?>'"class="btn btn-sm btn-link">
-                            <!--↑このファイル名ではない対応用のリンク先phpファイル作成を作成しないといけない -->
-                        <i class="fas fa-times-circle"></i></a> 
+                        <i class="fas fa-times-circle fa-lg" ></i>
+                    </a> 
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -229,32 +219,26 @@ if ($parent_checked_task) {
     <?php else: ?>
         <div class="alert alert-dark" role="alert">
                 <!-- 今日は○月○日です。 -->
-            ＋ボタンを押して
-            やることを入レましょう<br>
-
-            他の日の入力は上の
-            カレンダーから入力
-            しましょう<a href="child_task_input.php" class="alert-link"></a>
+                <a href="child_task_input.php" class="alert-link"><i class="fas fa-plus-circle"></i></a>ボタンを押して今日のやることを<br>
+            いれましょう<br>
+            
+            他の日はカレンダー<i class="far fa-calendar-alt"></i>ボタンを押して<br>
+            いれましょう 。
         </div>
 <?php endif;?>
 </div>
 </div>
 </div>
+<div class="button"><a href="../things/things_list.php">もの・ことかくにん</a></div>
 </main>
 
 <section id="parent_checked_task_output">
-    <p>↓下のできたこと チェックしました！!</p>
+    <p>↓チェック！</p> 
     <table>
         <tr>
           <td> <?= $parent_checked_task_output ?></td>
         </tr>
     </table>    
-
-    <!-- <table>
-        <tbody>
-            <?= $parent_checked_task_output ?>
-        </tbody>
-    </table> -->
 </section>
 
 <div>

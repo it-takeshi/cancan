@@ -39,47 +39,16 @@ body > * {
 header{
 	grid-row: head;
   justify-self: center;
-	align-self: center;
-	font-size: 40px;
-	color:#F5F5F5;
+  align-self: center;
+  font-size: 40px;
+  grid-column: 1 / -1;
+  background-color:#373870;
   font-family: 'Raleway', sans-serif;
-}
-
-header a {
-  color: inherit;
-  text-decoration: none;
-}
-
-nav{
-  grid-row: head;
-  justify-self: center;
-  align-self: flex-end;
-  
-}
-
-nav ul{
-display: grid;
-grid-auto-flow: column;
-column-gap: 20px;
-list-style-type: none;
-padding: 0;
-
-}
-
-nav a {
-  color:#F5F5F5;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: bold;
-}
-nav a:hover{
-  color:#484B7E;
 }
 
 section{
   grid-row: login;
 }
-
 
 form p {
   margin-bottom: 20px;
@@ -92,7 +61,7 @@ input {
 }
 
 input[type="submit"]{
-  background-color:#484B7E;
+  background-color:#373870;
   color:#F5F5F5;
   border: none;
   -webkit-appearance: none;
@@ -110,7 +79,7 @@ input[type="submit"]{
   display: inline-block;
   margin-top: 10px;
   border-radius: 10px;
-  background-color:#484B7E;
+  background-color: #373870;
 }
 
 div a:hover{
@@ -133,7 +102,7 @@ body::after{
   grid-row: foot;
   grid-column: 1 / -1;
   content: '';
-  background-color:#484B7E;
+  background-color:#373870;
   z-index: -1;
 
 }
