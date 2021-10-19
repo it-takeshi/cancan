@@ -58,101 +58,73 @@ if (isset($_FILES['upvideo']) && $_FILES['upvideo']['error'] == 0) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-  <meta charset="UTF-8">
-  <title>ないようをかくにん</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-    <!-- jQuery datetimepicker -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha512-AIOTidJAcHBH2G/oZv9viEGXRqDNmfdPVPYOYKGy3fti0xIplnlgMHUGfuNRzC6FkzIo0iIxgFnr9RikFxK+sw==" crossorigin="anonymous">
-    </script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" integrity="sha512-bYPO5jmStZ9WI2602V2zaivdAnbAhtfzmxnEGh9RwtlI00I9s8ulGe4oBa5XxiC6tCITJH/QG70jswBhbLkxPw==" crossorigin="anonymous" />
-
+<meta charset="UTF-8">
+<title>ないようをかくにん</title>
+<!-- Stylesheets -->
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
 <link rel="stylesheet" href="../css/things_check.css">
- 
 </head>
 
 <body>
-
 <header>
-        <a href="index.html">Can × Can</a>
-    </header>
-
-        <nav>
-            <ul>
-            <li><a href="index.html">トップ</a></li>
-            <li><a href="about.html">サイトについて</a></li>
-            <li><a href="contact.html">お問い合わせ</a></li>
-            </ul>
-        </nav>
-
+  <p> Can × Can</p>
+ </header>
 <section class="check">
-  <h1>ないようをかくにん</h1>
-    <div>
-      <p>
-    <label for="things_name">ものごとタイトル</label>
-    </p>
-    <p>
-      <?= $things_name ?>
-    </p>
-    </div>
+        <h1>ないようをかくにん</h1>
+        <div>
+              <p>
+            <label for="things_name">ものごとタイトル</label>
+            </p>
+            <p>
+              <?= $things_name ?>
+            </p>
+        </div>
 
-    <div>
-      <p>
-    <label for="textarea">メモ</label>
-    </p>
-    <p>
-      <?= $text_area ?>
-    </p>
-    </div>
+          <div>
+                <p>
+              <label for="textarea">メモ</label>
+              </p>
+              <p>
+                <?= $text_area ?>
+              </p>
+          </div>
 
-    <div>
-    <p>
-      <label for="upfile">しゃしん</label>
-    </p>
-    <p>
-    <image src="<?= $filename_to_save3 ?>" width="100px"></image>
-    </p>
-    </div>
+          <div>
+                <p>
+                  <label for="upfile">しゃしん</label>
+                </p>
+                <p>
+                <image src="<?= $filename_to_save3 ?>" width="100px"></image>
+                </p>
+          </div>
 
-
-    <div>
-    <p>
-      <label for="upvideo">どうが</label>
-    </p>
-    <p>
-    <video src="<?= $filename_to_save4 ?>" controls autoplay muted width="200px" height="133px"></video>
-    </p>
-    </div>
+            <div>
+                <p>
+                  <label for="upvideo">どうが</label>
+                </p>
+                <p>
+                <video src="<?= $filename_to_save4 ?>" controls autoplay muted width="200px" height="133px"></video>
+                </p>
+            </div>
 
   </section>
 
   <section class="submit">
-  <form action="things_create.php" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="things_name" value="<?= $things_name ?>">
-    <input type="hidden" name="text_area" value="<?= $text_area ?>">
-    <input type="hidden" name="filename_to_save3" value="<?= $filename_to_save3 ?>">
-    <input type="hidden" name="filename_to_save4" value="<?= $filename_to_save4 ?>">
-    
-    <button type="submit">とうろく</button>
-  </form>
+          <form action="things_create.php" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="things_name" value="<?= $things_name ?>">
+                <input type="hidden" name="text_area" value="<?= $text_area ?>">
+                <input type="hidden" name="filename_to_save3" value="<?= $filename_to_save3 ?>">
+                <input type="hidden" name="filename_to_save4" value="<?= $filename_to_save4 ?>">
+                <button type="submit">とうろく</button>
+          </form>
 
-  <div class="">
-      <a href="things_input.php">入力へ戻る</a>
-    </div>
-
+          <div class="">
+              <a href="things_input.php">入力へ戻る</a>
+          </div>
   </section>
 
   <footer>© Can & Can</footer>

@@ -67,9 +67,6 @@ if ($status == false) {
   //  exit();
   // array(2)
   //  { [0]=> array(10) { ["task_id"]=> string(2) "10" ["child_id"]=> string(2) "19" ["parent_id"]=> string(2) "18" ["task_name"]=> string(12) "宿題する" ["task_date"]=> string(10) "2021-09-27" ["task_time"]=> string(5) "15:06" ["image"]=> string(60) "../upload/20210927060541ab69c856f3aea1291565cacb4ae109a6.png" ["task_status"]=> string(1) "0" ["created_at"]=> string(19) "2021-09-27 15:05:45" ["updated_at"]=> string(19) "2021-09-27 15:05:45" } 
-
-  // [1]=> array(10) { ["task_id"]=> string(2) "11" ["child_id"]=> string(2) "19" ["parent_id"]=> string(2) "18" ["task_name"]=> string(18) "歯医者へ行く" ["task_date"]=> string(10) "2021-09-28" ["task_time"]=> string(5) "15:11" ["image"]=> string(60) "../upload/202109270611039a8b3706c0b321bddff31378787b10d6.png" ["task_status"]=> string(1) "0" ["created_at"]=> string(19) "2021-09-27 15:12:09" ["updated_at"]=> string(19) "2021-09-27 15:12:09" } }
-  
 }
 
 $sql = 'SELECT * FROM new_task_table WHERE child_id=:child_id AND parent_id=:parent_id AND CAST(start_datetime AS DATE) = :start_datetime AND task_status=:task_status ORDER BY start_datetime ASC';
@@ -92,13 +89,10 @@ if ($parent_checked_task) {
   $parent_checked_task_output ="<tr><td>できたね！</td><td></td><td class='image'></td><td></td></tr>";
   for ($i = 0; $i < count($parent_checked_task); $i++) {
      // count()関数で$parent_checked_taskの配列の数を取る
-
-    
     $start_time = date('H:i', strtotime($parent_checked_task[$i]["start_datetime"]));
   
     $parent_checked_task_output .= "<tr>";
 
-    // $parent_checked_task_output .= "<td>{$parent_checked_task[$i]["start_datetime"]}</td>";
     $parent_checked_task_output .= "<td>{$start_time}</td>";
 
     $parent_checked_task_output .= "<td>{$parent_checked_task[$i]["task_name"]}</td>";
@@ -106,7 +100,6 @@ if ($parent_checked_task) {
     $parent_checked_task_output .= "<td><img src='{$parent_checked_task[$i]["image"]}' width='30px'></td>";
     
     $parent_checked_task_output .= "<td><img src='../images/good.jpg' width='20px'></td>";
-    // $parent_checked_task_output .= "<td><img src='../images/smiley-1635449__340.webp' width='40px'></td>"; 
     $parent_checked_task_output .= "</tr>";
   }
 } else {
@@ -121,7 +114,6 @@ if ($parent_checked_task) {
 <head>
 <meta charset="UTF-8">
 <title>こどものマイページ</title>
-
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
@@ -130,24 +122,25 @@ if ($parent_checked_task) {
 <link rel="stylesheet" href="../css/child_page.css">
 </head>
 
-<body class="">
-    <!-- cssでbodyにdisplay:grid;設定をするとbodyタグの1階層下の大枠タグ <></>が -->
-    <!-- グリッドに配置するパーツと認識される -->
+<body >
     <header>
             <nav class="navbar navbar-expand-md  navbar-light bg-light  fixed-top">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="calendar.php" ><i class="far fa-calendar-alt"></i>カレンダー</a>
+                    <a class="navbar-brand" href="calendar.php"  id="sound3_button"><i class="far fa-calendar-alt"></i>カレンダー</a>
+
                     <p><?= $user_data['name'] ?>さんの<br>マイページ</p>
+
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="child_task_input.php"><i class="fa fa-plus"></i> ついか</a>
+                                <a class="nav-link" href="child_task_input.php" id="sound3_button"><i class="fa fa-plus"></i> ついか</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../log/logout.php"><i class="fas fa-sign-out-alt"></i> ログアウト</a>
+                                <a class="nav-link" href="../log/logout.php" id="sound3_button"><i class="fas fa-sign-out-alt"></i> ログアウト</a>
                             </li>
                         </ul>
                     </div>
@@ -203,6 +196,10 @@ if ($parent_checked_task) {
                                 <!-- <img src="../images/bells-2957570__340.webp" alt="" width="40px"> -->
                         </button> 
                         </form>
+                        <audio id="click_sound" preload="auto">
+                              <source src="../audio/click21.mp3"  type="audio/mp3">
+                        </audio>
+
                     <!-- たっせい⭐️ボタン -->
 
                         <!-- <a href=""><i class="far fa-smile-wink"></i></a> -->
@@ -219,17 +216,18 @@ if ($parent_checked_task) {
     <?php else: ?>
         <div class="alert alert-dark" role="alert">
                 <!-- 今日は○月○日です。 -->
-                <a href="child_task_input.php" class="alert-link"><i class="fas fa-plus-circle"></i></a>ボタンを押して今日のやることを<br>
+                <a href="child_task_input.php" class="alert-link" id="sound3_button"><i class="fas fa-plus-circle"></i></a>ボタンを押して今日のやることを<br>
             いれましょう<br>
-            
-            他の日はカレンダー<i class="far fa-calendar-alt"></i>ボタンを押して<br>
+
+            <a href="calendar.php" class="alert-link" id="sound3_button"><i class="far fa-calendar-alt"></i></a>
+            他の日はカレンダーボタンを押して<br>
             いれましょう 。
         </div>
 <?php endif;?>
 </div>
 </div>
 </div>
-<div class="button"><a href="../things/things_list.php">もの・ことかくにん</a></div>
+<div class="button" id="sound3_button"><a href="../things/things_list_child.php">もの・ことかくにん</a></div>
 </main>
 
 <section id="parent_checked_task_output">
@@ -244,17 +242,13 @@ if ($parent_checked_task) {
 <div>
     <input type="button" value="こうしん" onclick="koshin()"  id="koshin">
 </div>
+        <audio id="click_sound2" preload="auto">
+              <source src="../audio/click5.mp3"  type="audio/mp3">
+        </audio>
 
-    <!-- <section id="icon-area">
-        <ul class="icon">
-        <li><a href="celebration2.php"><i class="fas fa-trophy" ></i></a></li>
-        <li><a href=""><i class="fas fa-hand-paper"></i></a></li>
-        <li><a href="child_task_input.php"><i class="fas fa-plus-circle"></i></a></li>
-        <li> <a href="../log/logout.php">ログアウト</a></li>
-        </ul>
-    </section> -->
-
-    <footer>© Can & Can</footer>
+        <audio id="click_sound3" preload="auto">
+              <source src="../audio/click31.mp3"  type="audio/mp3">
+        </audio>
 
 <!-- java script! -->
 <script src="../js/bootstrap.min.js"></script>
@@ -264,6 +258,28 @@ if ($parent_checked_task) {
   <script src="../js/bootstrap-datetimepicker.min.js"></script>
 
 <script>
+  window.onload = () => {
+        const se = document.querySelector('#click_sound');
+        document.querySelector("#complete_btn").addEventListener("click", () => {
+            se.play();
+        });
+    };
+
+    window.onload = () => {
+        const se2  = document.querySelector('#click_sound2');
+        document.querySelector("#koshin").addEventListener("click", () => {
+            se2.play();
+        });
+    };
+
+    window.onload = () => {
+        const se3  = document.querySelector('#click_sound3');
+        document.querySelector("#sound3_button").addEventListener("click", () => {
+            se3.play();
+        });
+    };
+
+
 //ページ遷移
 $("#complete_btn").on("click", function() {
   setTimeout(function() {

@@ -16,43 +16,9 @@
   <title>保護者ログイン</title>
 </head>
     <body class="">
-        
-        <header>
-          <h2><a href="index.html">Can × Can</a></h2>
-
-          <nav class="navbar navbar-expand-md  navbar-light bg-light  fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Can × Can</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="add.php"><i class="fa fa-plus"></i> 追加</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="search.php"><i class="fa fa-search"></i> 検索</a>
-                    </li>
-                </ul>
-                <form class="d-flex" action="calendar.php">
-                    <input type="text" name="ym" class="form-control me-2" placeholder="年月を選択" id="ymPicker">
-                    <button class="btn btn-outline-dark text-nowrap" type="submit">表示</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-          </header>
-
-        <!-- <nav>
-            <ul>
-              <li><a href="index.html">トップ</a></li>
-              <li><a href="about.html">サイトについて</a></li>
-              <li><a href="contact.html">お問い合わせ</a></li>
-            </ul>
-        </nav> -->
-
+    <header>
+        <p><a href="#">Can × Can</a></p>
+    </header>
         <section class="login"> 
             <h1>保護者 ログイン</h1>
             <p>下記内容の記入をお願いします。</p>

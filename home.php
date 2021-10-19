@@ -13,13 +13,13 @@
     <header>
         <p><a href="#">Can × Can</a></p>
     </header>
-    <!-- <nav>
+    <nav>
             <ul>
-            <li><a href="#">トップ</a></li>
-            <li><a href="#">サイトについて</a></li>
-            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="../home.php">トップ</a></li>
+            <li><a href="../about.php">サイトについて</a></li>
+            <li><a href="../contact.php">お問い合わせ</a></li>
             </ul>
-    </nav> -->
+    </nav> 
     <!--  -->
     <figure class="hero">
       <img src="images/dog1.jpg" width="100px" alt="できる！" class="circle">

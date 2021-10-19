@@ -1,10 +1,11 @@
 <?PHP
-
 session_start();
 include("../functions.php");
-include("../config.php");
 check_session_id();
 $pdo = connect_to_db();
+$user_id = $_SESSION['user_id'];
+$parent_id = $_SESSION['parent_id'];
+$start_datetime = $_POST['start_datetime'];
 
 ?>
 
@@ -26,35 +27,29 @@ $pdo = connect_to_db();
 
 
 <body class="">
-
-    <header>
-    <nav class="navbar navbar-expand-md  navbar-light bg-light  fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="calendar.php"><i class="far fa-calendar-alt"></i>カレンダー</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="add.php"><i class="fa fa-plus"></i> 追加</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="search.php"><i class="fa fa-search"></i> 検索</a>
-                    </li>
-                </ul>
-                <form class="d-flex" action="calendar.php">
-                    <input type="text" name="ym" class="form-control me-2" placeholder="年月を選択" id="ymPicker">
-                    <button class="btn btn-outline-dark text-nowrap" type="submit">表示</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-  </header>
+<header>
+            <nav class="navbar navbar-expand-md  navbar-light bg-light  fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="calendar.php"  id="sound3_button"><i class="far fa-calendar-alt"></i>カレンダー</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="child_task_input.php" id="sound3_button"><i class="fa fa-plus"></i> ついか</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../log/logout.php" id="sound3_button"><i class="fas fa-sign-out-alt"></i> ログアウト</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    </header>
+ 
 
  <section>
-
-
 <form action="child_task_check.php" method="post"  enctype="multipart/form-data">
 <p>
 <label>
@@ -98,8 +93,6 @@ placeholder="はじめる時間を入れよう。" autocomplete="off">
 </form>
 
 </section>
-
-<footer>© Can & Can</footer>
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -147,20 +140,3 @@ $(function() {
 </script>
 </body>
 </html>
-
-<!-- // $(function () {
-//                 $('#ymPicker').datetimepicker({
-//                     format: 'YYYY-MM',
-//                     locale: 'ja'
-//                 });
-//             $('.task-datetime').datetimepicker({
-//                 dayViewHeaderFormat: 'YYYY年 MMMM',
-//                 format: 'YYYY/MM/DD HH:mm',
-//                 locale: 'ja',
-//             });
-//             $('#selectColor').bind('change', function(){
-//                 $(this).removeClass();
-//                 $(this).addClass('form-select').addClass($(this).val());
-//             });
-//         }); -->
-

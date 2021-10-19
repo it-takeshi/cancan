@@ -30,13 +30,6 @@ $pdo = connect_to_db();
         <a href="index.html">Can × Can</a>
   </header>
 
-  <nav>
-      <ul>
-      <li><a href="index.html">トップ</a></li>
-      <li><a href="about.html">サイトについて</a></li>
-      <li><a href="contact.html">お問い合わせ</a></li>
-      </ul>
-  </nav>
 
 <section>
     

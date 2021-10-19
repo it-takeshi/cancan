@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("../functions.php");
+
 check_session_id();
 $pdo = connect_to_db();
 $user_id = $_SESSION['user_id'];
@@ -50,7 +51,7 @@ if ($status == false) {
       $completed_task_output .= "<td><img src='{$completed_task[$i]["image"]}' width='30px'></td>";
       $completed_task_output .= "<td>
         <form action='task_response.php' method='POST'>
-          <input type='hidden' name='task_id' value={$completed_task[$i]["task_id"]}>
+          <input type='hidden'  name='task_id' value={$completed_task[$i]["task_id"]}>
           <button id='response_btn' type='submit'>OK</button>
         </form>
     </td>";
@@ -99,23 +100,15 @@ if ($status == false) {
 <meta charset="UTF-8">
 <title>大人のマイページ</title>
 <meta name="viewport" content="width=device-width">
-<!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+  <!-- Stylesheets -->
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> 
 <link rel="stylesheet" href="../css/parent_page.css">
 </head>
 
 <body>
-   <!-- cssでbodyにdisplay:grid;設定をするとbodyタグの1階層下の大枠タグ <></>が -->
-<!-- グリッドに配置するパーツと認識される -->
-
-<!-- パーツ[head] -->
-    <header>Can×Can</header>
-    
-<!-- パーツ[head] --> 
-
-<!-- パーツ[button] -->
       <section class="button">
             <h3>
                 <?= $user_data['name'] ?>さんのマイページ
@@ -126,58 +119,61 @@ if ($status == false) {
               <!-- ↑手順は新規登録の時こどもの登録も終了してないとセッション繋がらないのでここは使わないようにする -->
               <!-- <li> <a href="parent_task_input.php">タスクを登録</a></li> -->
               <li> <a href="../template/template_list.php">タスク</a></li> 
-              <!-- <li> <a href="../template/template_input.php">タスクのテンプレを作成</a></li> -->
-              <!-- <li> <a href="../things/things_input.php">もの・こと作成</a></li> -->
               <li> <a href="../things/things_list.php">もの・こと</a></li>
-
             </ul>
             </nav>
             <p>
               <input type="button" value="おわったのないかな？" onclick="koshin()">
             </p>
       </section>
- <!-- パーツ[button] -->
-
- <!-- パーツ[completed_task_output] -->
-        <section class="completed_task_output">
+      <section class="completed_task_output">
               <p>完了した予定</p>
+              <audio id="click_sound" preload="auto">
+                              <source src="../audio/click3.mp3"  type="audio/mp3">
+                        </audio>
                     <table>
                       <tr>
                       <td> <?= $completed_task_output ?></td>
                       </tr>
                     </table> 
-              <!-- <div><?= $completed_task_output ?></div> -->
           </section>
-<!-- パーツ[completed_task_output] -->
-
-<!-- パーツ[nocompleted_task_output] -->
           <section class="nocompleted_task_output">
 
-          <!-- <img src="data:image/png;base64,<?= $nocompleted_task[$i]["image"] ?>"> -->
               <p>未完了の予定</p>
-            <!-- <div><?= $nocompleted_task_output ?></div> -->
                   <table>
                       <tr>
                       <td> <?= $nocompleted_task_output ?></td>
                       </tr>
                     </table> 
             </section>
-<!-- パーツ[nocompleted_task_output] -->
 
-<!-- パーツ[div] -->
-<div>
-  <a href="../log/logout.php">ログアウト</a>
-</div>
-<!-- パーツ[div] -->
+            <div class="logout">
+              <a href="../log/logout.php">ログアウト</a>
+            </div>
 
-<!-- パーツ[foot]  -->
-          <footer>© Can & Can</footer>
-<!-- パーツ[foot]  -->
+  <footer class="footer py-3 mt-auto bg-light">
+    <div class="container text-center">
+        <span class="text-muted">&copy; Can Can</span>
+    </div>
+    <div class="container text-center">
+        <span class="text-muted">&copy; Can Can</span>
+    </div>
+    <div class="container text-center">
+        <span class="text-muted">&copy; Can Can</span>
+    </div>
+</footer>
 
 <script>
     function koshin() {
       location.reload();
     }
+
+    window.onload = () => {
+        const se     = document.querySelector('#click_sound');
+        document.querySelector("#response_btn").addEventListener("click", () => {
+            se.play();
+        });
+    };
 </script>
 </body>
 </html>

@@ -23,7 +23,7 @@ $pdo = connect_to_db();
 <link rel="stylesheet" href="../css/task_input.css">
 </head>
 
-<body class="">
+<body>
 
     <header>
     <nav class="navbar navbar-expand-md  navbar-light bg-light  fixed-top">
@@ -92,8 +92,6 @@ $pdo = connect_to_db();
         </p>
   </form>
 </section>
-
-<footer>© Can & Can</footer>
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

@@ -85,25 +85,17 @@ if ($status == false) {
 <!DOCTYPE html>
 <html lang="ja" class="h-100">
 <head>
-        <!-- Stylesheets -->
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" integrity="sha512-bYPO5jmStZ9WI2602V2zaivdAnbAhtfzmxnEGh9RwtlI00I9s8ulGe4oBa5XxiC6tCITJH/QG70jswBhbLkxPw==" crossorigin="anonymous" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" integrity="sha512-bYPO5jmStZ9WI2602V2zaivdAnbAhtfzmxnEGh9RwtlI00I9s8ulGe4oBa5XxiC6tCITJH/QG70jswBhbLkxPw==" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-        <link rel="stylesheet" href="../css/temple_check_create.css">
-    <!-- ↑順番で処理がされる。なので同じ部分を処理したときは最後のcss/style.cssが処理され、その内容が反映 -->
-    <style>
-    </style>
-    </head>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="../css/temple_check_create.css">
+</head>
 
 <body>
   <header>
-      <p> 
-        <a href="index.html">Can × Can</a>
+      <p>Can × Can</a>
       </p>
   </header>
   
@@ -113,7 +105,7 @@ if ($status == false) {
       <div>
         <label for="">がぞう</label>
           <p><?= $output1 ?></p>
-            <img src='<?= $template_data['template_image'];?>' width='10px'>
+            <img src='<?= $template_data['template_image'];?>' width='50px'>
       </div>
       <div>
         <label for="">やること</label>
@@ -145,7 +137,7 @@ if ($status == false) {
                             <option value="bg-dark">黒</option>
                             <option value="bg-secondary">グレー</option>
                         </select>
-                    </div>
+          </div>
 
     <input type="hidden" name="filename_to_save" value="<?= $template_data['template_image'] ?>"> 
 

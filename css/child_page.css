@@ -7,8 +7,6 @@ body{
   text-size-adjust: none;
 }
 
-/* 基本設定 */
-/* 下記の＊は全ての要素という意味 */
 * {
 	margin: 0;
 }
@@ -71,6 +69,8 @@ section{
   grid-template-columns:  1fr 1fr;
 	row-gap: 10px;
   column-gap: 20px;
+  justify-self: center;
+  align-self: center;
 }
 
 section img{
@@ -108,24 +108,24 @@ div input:hover{
   border-radius: 50%;
   background: #484B7E;
   color: #fff;
-  padding: 8px 8px;
+  padding: 8px 8px; 
   font-size: 10px;
 }
 
 /* フッター */
 footer{
   grid-row: foot;
-  justify-self: center;
+  /* justify-self: center;
   align-self: center;
   font-size: 13px;
   font-family: 'Raleway', sans-serif;
-  color:#F5F5F5;
+  color:#F5F5F5; */
 
 
 }
 /* フッターのバー */
  /* 擬似要素を作成 */
-body::after{
+/* body::after{
   grid-row: foot;
   grid-column: 1 / -1;
   content: '';
@@ -133,6 +133,6 @@ body::after{
   z-index: -1;
 	
 
-}
+} */
 
 

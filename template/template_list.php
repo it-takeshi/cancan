@@ -31,7 +31,7 @@ $output = "";
 for ($i = 0; $i < count($templates); $i++) {
   // count()関数で$templatesの配列の数を取る
      $output .= "<ul>";
-    $output .= "<li><img src='{$templates[$i]["template_image"]}' width='30px'></li>";
+    $output .= "<li><img src='{$templates[$i]["template_image"]}' width='100px'></li>";
     $output .= "<li>{$templates[$i]["template_name"]}</li>";
     $output .= "<li>
                     <form action='../parent/parent_temple_check_create.php' method='POST'>
@@ -55,10 +55,8 @@ for ($i = 0; $i < count($templates); $i++) {
     <link rel="stylesheet" href="../css/template_list.css">
 </head>
   <body>
-  <header>
-          <p><a href="#">Can × Can</a></p>
-    </header>
-  <h2>つかうタスクテンプレートを<br>えらんでください</h2>
+  
+  <h2>つかうテンプレートを<br>えらんでください</h2>
   <section>
     <?= $output ?>
     </section>
@@ -67,7 +65,18 @@ for ($i = 0; $i < count($templates); $i++) {
     <a href="template_input.php">あらたに作る</a>
         <a href="../parent/parent_page.php">もどる</a>
       </div>
-    <footer>© Can & Can</footer>
+    
+  <footer class="footer py-3 mt-auto bg-light">
+    <div class="container text-center">
+        <span class="text-muted">&copy; Can Can</span>
+    </div>
+    <div class="container text-center">
+        <span class="text-muted">&copy; Can Can</span>
+    </div>
+    <div class="container text-center">
+        <span class="text-muted">&copy; Can Can</span>
+    </div>
+</footer>
   </body>
 <!-- java script! -->
 <script src="../js/bootstrap.min.js"></script>

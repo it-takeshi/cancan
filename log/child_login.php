@@ -9,7 +9,9 @@
 <link rel="stylesheet" href="../css/login.css"> 
 </head>
 <body>
-    <header>Can × Can</header>
+    <header>
+        <p><a href="#">Can × Can</a></p>
+    </header>
     <section class="login"> 
                             <h2>お子様ログイン</h2>
                             <p>空らんになまえを入れよう</p>

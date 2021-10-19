@@ -17,14 +17,14 @@
 <body class="">
 
 	<header>
-		<a href="index.html">Can × Can</a>
+		<p>	<a href="#">Can × Can</a></p>
 	</header>
 
 	<nav>
 		<ul>
-		<li><a href="index.html">トップ</a></li>
-		<li><a href="about.html">サイトについて</a></li>
-		<li><a href="contact.html">お問い合わせ</a></li>
+		<li><a href="../home.php">トップ</a></li>
+		<li><a href="../about.php">サイトについて</a></li>
+		<li><a href="../contact.php">お問い合わせ</a></li>
 		</ul>
 	</nav>
 
@@ -39,7 +39,7 @@
 					<p>
 					<label>
 					名前：
-					<input type="text" name="name">
+					<input type="text" name="name" autocomplete="name">
 					</label>
 					</p>
 

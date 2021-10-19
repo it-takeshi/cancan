@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-/*
----------------------------
-    共通
----------------------------
-*/
 main .container {
     padding-top: 80px;
     padding-bottom: 40px;
@@ -30,11 +25,7 @@ a {
     text-decoration: none;
 }
 
-/*
----------------------------
-    Table: カレンダー
----------------------------
-*/
+
 .calendar {
     table-layout: fixed;
 }
@@ -74,17 +65,12 @@ a {
     margin-top: 2px;
 }
 
-
-/*
----------------------------
-    Datetimepicker
----------------------------
 /* プラグインと Bootstrap のバージョンが異なっている。なのでスタイル調整 */
 .dp-parent {
   position: relative;
 }
 
-/* add.phpでのセレクトタグ変更時文字の色を一部白色へ */
+
 .form-select.bg-primary,
 .form-select.bg-secondary,
 .form-select.bg-success,
@@ -93,7 +79,7 @@ a {
     color: #ffffff;
 }
 
-/* calendar.phpでbg-light の文字色が薄くて読みにくいので修正 */
+
 .badges .badge {
   display: flex;
   text-align: left;

@@ -86,28 +86,26 @@ for ($i = 0; $i < count($completed_task); $i++) {
 <body>
       <header>
         <ul>
-          <li>  <button onclick="changeMenu()" class="c-button">たっせいを<br>チェック </button></li>
-          <li> <strong><?= $point ?>ポイント</strong></li>
-          <li> <a href="child_page.php?ymd='.date('Y-m-d')">もどる</a></li>
-
-          <!-- <a href="calendar.php?ym=<?= $prev; ?>">&lt;</a>
-
-          header('Location:child_page.php?ymd='.date('Y-m-d', strtotime($start_datetime))); -->
-
+          <li>  
+            <button onclick="changePoint()" class="c-button" id="click_btn">たっせいを<br>チェック </button>
+          </li>
+          <audio id="click_sound" preload="auto">
+            <source src="../audio/click24.mp3"  type="audio/mp3">
+          </audio>
+      
+          <li> 
+            <div id="outPoint"><?= $point ?>ポイント！!</div>
+          </li>
+          <li> 
+            <a href="child_page.php?ymd='.date('Y-m-d')">もどる</a>
+          </li>
         </ul>
       </header>
-     
       <section >
       <div class="output2"></div>
 
                 <div class="output"><?= $output ?></div>
       </section>
-     
-      <!-- <div class="squere">
-                          <?= $output ?>
-        </div>  -->
-
-        <!-- <footer></footer> -->
   
 </body>
 
@@ -117,9 +115,22 @@ for ($i = 0; $i < count($completed_task); $i++) {
   <script src="../js/anime.min.js" ></script>
   <script>
 
+window.onload = () => {
+        const se     = document.querySelector('#click_sound');
+        document.querySelector("#click_btn").addEventListener("click", () => {
+            se.play();
+        });
+    };
+
+
+$('#click_btn').click(function(){
+$('#outPoint').show();
+});
+  
+
     var test1 = anime({
       targets: ['.output'],
-      translateY: '14rem',
+      translateY: '54rem',
       // scale: [.75, .9],
       delay: function(el, index) {
         return index * 80;
@@ -137,19 +148,6 @@ for ($i = 0; $i < count($completed_task); $i++) {
   loop: true
 });
 
-
-    function changeMenu(){
-      let menus =document.getElementsByClassName('menu');
-      console.log(menus);
-      // HTMLCollection(3) [p.menu, p.menu, p.menu]
-      // 0: p.menu
-      // 1: p.menu
-      // length: 2
-      // [[Prototype]]: HTMLCollection
-      menus[0].style.color = '#ff0000';
-      menus[1].innerHTML ='ラーメン定食';
-      menus[2].remove();
-      };
 </script>
 
 </body>

@@ -36,8 +36,16 @@ body > *{
 
 header{
   grid-row: head;
-  justify-self: center;
-	align-self: center;
+  grid-column: 1 / -1;
+  /* background-color: #484B7E; */
+  background-color: #373870;
+  
+}
+
+header p {
+  padding-top: 25px;
+  justify-content: end;
+	text-align: center;
 	font-size: 40px;
 	color:#F5F5F5;
   font-family: 'Raleway', sans-serif;

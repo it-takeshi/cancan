@@ -85,6 +85,15 @@ header  a {
   box-shadow: 0 0 0 4px #cbd6ee;
 }
 
+#outPoint{
+  display: none;
+  color: #fff;
+  font-size: 30px;
+}
+
+
+
+
 section{
   grid-row: section;
 

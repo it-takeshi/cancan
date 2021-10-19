@@ -17,12 +17,11 @@ body{
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows: 
-            [head] 100px
             [button] auto
             [completed_task_output] auto
             [nocompleted_task_output] auto
             [div] auto
-            [foot] 100px;
+            [foot] 80px;
   row-gap: 20px;
   font-family: sans-serif;
   background-color: #FFE382;
@@ -30,18 +29,6 @@ body{
 
 body > *{
     grid-column: 2 / -2;
-}
-
-
-header{
-	grid-row: head;
-  justify-self: center;
-  align-self: center;
-  font-size: 40px;
-  color:#F5F5F5;
-  grid-column: 1 / -1;
-  background-color:#373870;
-  font-family: 'Raleway', sans-serif;
 }
 
 .button{
@@ -70,16 +57,8 @@ padding: 0;
   text-align: center;
   font-size: 20px;
   color: #373870;
+  margin-top: 10px;
 }
-
-/* .button ul{
-	display: grid;
-grid-auto-flow: column;
-column-gap: 5px;
-list-style-type: none;
-padding: 0;
-font-size: 10px;
-} */
 
 .button a {
   color:#F5F5F5;
@@ -123,7 +102,18 @@ div{
   grid-row: div;
   text-align: center;
 }
-div a {
+
+
+footer{
+	grid-row: foot;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-auto-flow: column;
+  
+}
+
+
+.logout a {
  color:#F5F5F5;
  text-decoration: none;
  border: solid 1px #ffffff;
@@ -134,27 +124,39 @@ div a {
  background-color: #373870;
 }
 
-div a:hover{
+.logout a:hover{
  background-color: crimson;
 }
 
-/* フッター */
-footer{
-  grid-row: foot;
-  justify-self: center;
-  align-self: center;
-  font-size: 13px;
-  font-family: 'Raleway', sans-serif;
-  color:#F5F5F5;
 
-}
-/* フッターのバー */
- /* 擬似要素を作成 */
-body::after{
-  grid-row: foot;
-  grid-column: 1 / -1;
-  content: '';
-  background-color: #373870;
-  z-index: -1;
-
-}
+.menu {
+    position: fixed;  left: 0;
+  bottom: 0;
+  background: white;
+   width: 100%;
+  }
+  
+  .menu li {
+    
+        display: table;
+    
+        table-layout: fixed;
+    
+        width: 100%;
+    
+        padding: 5px;
+    
+        list-style: none;
+    
+        text-align: center;
+    
+    }
+    
+    .menu a span {
+      
+          display: block;
+      
+          font-size: 4px;
+      
+      }
+      

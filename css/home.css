@@ -37,7 +37,7 @@ body > *{
 
 header{
   grid-row: head;
-  grid-column: 1 / -1;
+  grid-column: 1 /  -1;
   /* background-color: #484B7E; */
   background-color: #373870;
   
@@ -56,7 +56,7 @@ header a {
   color: inherit;
   text-decoration: none;
 }
-/* 
+
 nav{
   grid-row: head;
   justify-self: center;
@@ -81,7 +81,7 @@ nav a {
 }
 nav a:hover{
   color:#484B7E;
-} */
+}
 
 figure.hero  {
   grid-row: hero ;
@@ -174,5 +174,38 @@ body::after{
   content: '';
   background-color: #373870;
   z-index: -1;
+
+}
+
+/* PC版画面設定 */
+@media(min-width:768px){
+
+ body{
+   grid-template-columns: 0.2fr repeat(6,1fr) 0.2fr;
+   column-gap: 5%;
+   grid-template-rows:
+   [head] 100px
+   [hero] auto
+   [section] auto
+   [foot] 100px;
+
+ }
+
+
+ figure.hero  {
+  grid-row: hero ;
+	grid-column: 3 / -3;
+                /* ↓△ */
+ background-color: #FFE382;
+ z-index: -1;
+}
+
+.hero img{
+  vertical-align: bottom;
+  height: 320px;
+  object-fit: cover;
+  
+}
+
 
 }
