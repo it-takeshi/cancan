@@ -70,11 +70,9 @@ if (isset($_FILES['upvideo']) && $_FILES['upvideo']['error'] == 0) {
 </head>
 
 <body>
-<header>
-  <p> Can × Can</p>
- </header>
+<h2>ないようをかくにん</h2>
 <section class="check">
-        <h1>ないようをかくにん</h1>
+  
         <div>
               <p>
             <label for="things_name">ものごとタイトル</label>
@@ -127,7 +125,7 @@ if (isset($_FILES['upvideo']) && $_FILES['upvideo']['error'] == 0) {
           </div>
   </section>
 
-  <footer>© Can & Can</footer>
+  
 </body>
 
 </html>

@@ -21,7 +21,7 @@ body{
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
-  [head] 100px
+  [head] 150px
   [section] auto;
   row-gap: 20px;
   font-family: sans-serif;
@@ -30,17 +30,19 @@ body{
 }
 
 body> *{
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
 }
 
 header{
 	grid-row: head;
+  grid-column: 1 / -1;
   /* justify-self: center;
 	align-self: center; */
 	font-size: 15px;
 	color:#F5F5F5;
   background-color: #484B7E;;
   font-family: 'Raleway', sans-serif;
+  padding-top: 20px;
 }
 
 header ul{
@@ -70,8 +72,9 @@ header  a {
   border-radius: 5px;
   background-color:#484B7E;
   color: #fff;
-  padding: 8px 16px;
-  font-size: 16px;
+  padding: 8px ;
+  padding-left: 90px;
+  font-size: 30px;
   font-family: inherit;
   min-width: 100px;
 }
@@ -80,19 +83,20 @@ header  a {
   background: #1d49aa;
 }
  
-.c-button:focus {
+/* .c-button:focus {
   outline: none;
   box-shadow: 0 0 0 4px #cbd6ee;
-}
+} */
 
 #outPoint{
   display: none;
   color: #fff;
-  font-size: 30px;
+  font-size: 50px;
 }
 
-
-
+header li a{
+font-size: 40px;
+}
 
 section{
   grid-row: section;

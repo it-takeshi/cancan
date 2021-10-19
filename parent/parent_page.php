@@ -1,7 +1,6 @@
 <?php
 session_start();
 include("../functions.php");
-
 check_session_id();
 $pdo = connect_to_db();
 $user_id = $_SESSION['user_id'];
@@ -57,6 +56,10 @@ if ($status == false) {
     </td>";
       $completed_task_output .= "</tr>";
     }
+    $point = '';
+    
+    $point .=  count($completed_task);
+
   } else {
     $completed_task_output = "<tr><td class='image'></td><td>今はありません</td><td></td><td></td><td></td></tr>";
   }
@@ -113,15 +116,7 @@ if ($status == false) {
             <h3>
                 <?= $user_data['name'] ?>さんのマイページ
             </h3>
-          <nav>
-            <ul>
-              <!-- <li>  <a href="../account_create/child_create.php">お子さん新規登録</a></li> -->
-              <!-- ↑手順は新規登録の時こどもの登録も終了してないとセッション繋がらないのでここは使わないようにする -->
-              <!-- <li> <a href="parent_task_input.php">タスクを登録</a></li> -->
-              <li> <a href="../template/template_list.php">タスク</a></li> 
-              <li> <a href="../things/things_list.php">もの・こと</a></li>
-            </ul>
-            </nav>
+            <div id="outPoint">お子さんの達成 いま  <?= $point ?>ポイント！!</ｐ>
             <p>
               <input type="button" value="おわったのないかな？" onclick="koshin()">
             </p>
@@ -147,21 +142,30 @@ if ($status == false) {
                     </table> 
             </section>
 
-            <div class="logout">
-              <a href="../log/logout.php">ログアウト</a>
-            </div>
 
+  <ul>
+    <li><a href="../log/logout.php">ログアウト</a></li>
+    <li> <a href="../template/template_list.php">タスク</a></li>
+    <li> <a href="../things/things_list.php">もの・こと</a></li>
+  </ul>
+
+
+  
+<!-- 
   <footer class="footer py-3 mt-auto bg-light">
-    <div class="container text-center">
-        <span class="text-muted">&copy; Can Can</span>
+
+  <div class="container text-center">
+        <span class="text-muted"> <a href="../log/logout.php">ログアウト</a></span>
     </div>
     <div class="container text-center">
-        <span class="text-muted">&copy; Can Can</span>
+        <span class="text-muted"><a href="../template/template_list.php">タスク</a></span>
     </div>
     <div class="container text-center">
-        <span class="text-muted">&copy; Can Can</span>
+        <span class="text-muted"><a href="../things/things_list.php">もの・こと</a></span>
     </div>
-</footer>
+  
+</footer> -->
+
 
 <script>
     function koshin() {

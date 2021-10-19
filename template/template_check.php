@@ -107,7 +107,6 @@ if (isset($_FILES['upfile']) && $_FILES['upfile']['error'] == 0) {
 
   </section>
 
-  <footer>© Can & Can</footer>
 </body>
 
 </html>

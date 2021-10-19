@@ -26,9 +26,7 @@ $pdo = connect_to_db();
 
 <body class="">
 
-<header>
-    <p><a href="index.html">Can × Can</a></p>
-</header>
+<h2>もの・こと入力</h2>
 <section>
     <form action="things_check.php" method="post"  enctype="multipart/form-data">
         <p>
@@ -70,7 +68,7 @@ $pdo = connect_to_db();
       </p>
     </div>
 
-    <footer>© Can & Can</footer>
+   
     
 
         <!-- JavaScript -->

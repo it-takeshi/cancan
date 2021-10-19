@@ -65,7 +65,7 @@ for ($i = 0; $i < count($templates); $i++) {
     <a href="template_input.php">あらたに作る</a>
         <a href="../parent/parent_page.php">もどる</a>
       </div>
-    
+<!--     
   <footer class="footer py-3 mt-auto bg-light">
     <div class="container text-center">
         <span class="text-muted">&copy; Can Can</span>
@@ -76,7 +76,7 @@ for ($i = 0; $i < count($templates); $i++) {
     <div class="container text-center">
         <span class="text-muted">&copy; Can Can</span>
     </div>
-</footer>
+</footer> -->
   </body>
 <!-- java script! -->
 <script src="../js/bootstrap.min.js"></script>

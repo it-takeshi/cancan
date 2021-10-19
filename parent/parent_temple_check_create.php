@@ -9,7 +9,6 @@
 
 session_start();
 include("../functions.php");
-include("../config.php");
 check_session_id();
 $pdo = connect_to_db();
 $user_id = $_SESSION['user_id'];
@@ -59,16 +58,7 @@ if ($status == false) {
 }
     // $output = "";
     // for ($i = 0; $i < count($template_data); $i++) {
-    //     // count()関数で$template_dataの配列の数を取る
-    //     $output .= "<li>";
-    //     $output .= "<li><img src='{$template_data[$i]["template_image"]}' width='20px'></li>";
-    //     $output .= "<li>{$template_data[$i]["template_name"]}</li>";
-    //     $output .= "</li>";
-    //     // ↓このタイミングでvar_dumpすれば取れる
-    //     // var_dump($template_data[$i]["template_name"]);
-    //     // はいしゃへ行く
-    // //    exit();
-    // }
+    //     // count()関数で$template_dataの配列の数を
     $output1 = "";
     for ($i = 0; $i < count($template_data); $i++) {
         // count()関数で$template_dataの配列の数を取る
@@ -94,17 +84,12 @@ if ($status == false) {
 </head>
 
 <body>
-  <header>
-      <p>Can × Can</a>
-      </p>
-  </header>
+ 
+  <h2 class="title1">内容確認</h2>
   
-  <section class="check">
-      <h2>内容確認</h2>
-        
+  <section class="check">   
       <div>
         <label for="">がぞう</label>
-          <p><?= $output1 ?></p>
             <img src='<?= $template_data['template_image'];?>' width='50px'>
       </div>
       <div>
@@ -112,10 +97,11 @@ if ($status == false) {
           <p><?php $template_data["template_name"] ?></p>
             <p><?php echo $template_data["template_name"]; ?></p>
         </div>
-  </section>
+      </section>
 
-  <section class="submit">
-      <h2>にゅうりょく</h2>
+  <h2 class="title2"> にゅうりょく</h2>
+
+  <section class="submit">  
       <form action="parent_task_create.php" method="POST" enctype="multipart/form-data">
 
       <p>
@@ -125,7 +111,8 @@ if ($status == false) {
       placeholder="はじめる時間を入れよう。" autocomplete="off">
       </label>
       </p>
-        <div class="mb-5">
+
+      <div class="mb-5">
           <label for="selectColor" class="form-label">カラー</label>
                         <select name="color" id="selectColor" class="form-select bg-light">
                             <option value="bg-light" selected>白</option>
@@ -142,15 +129,17 @@ if ($status == false) {
     <input type="hidden" name="filename_to_save" value="<?= $template_data['template_image'] ?>"> 
 
     <input type="hidden" name="task_name" value="<?= $template_data["template_name"] ?>"> 
-
-  <button type="submit">とうろく</button>
+    <p> <button type="submit">とうろく</button></p>
+   <p> 
+ 
   </form>
   </section>
 
     <div>
-        <a href="../template/template_list.php">テンプレートリストへ</a>
+      <a href="../template/template_list.php">テンプレートリストへ</a></p>
     </div>
-    <footer>© Can & Can</footer>
+
+ 
 </body>
 
         <!-- JavaScript -->

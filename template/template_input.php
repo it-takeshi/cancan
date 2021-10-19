@@ -60,7 +60,7 @@ $pdo = connect_to_db();
         </ul>
     </div>
 
-    <footer>© Can & Can</footer>
+    
     
 
         <!-- JavaScript -->

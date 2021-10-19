@@ -77,10 +77,8 @@ for ($i = 0; $i < count($things); $i++) {
     <link rel="stylesheet" href="../css/things_list.css">
 </head>
 <body>
-<header>
-      <p><a href="#">Can × Can</a></p>
-</header>
-<h1>もの・ことリスト</h1>
+
+<h2>もの・ことリスト</h2>
 <section>
     <?= $output ?>
 </section>

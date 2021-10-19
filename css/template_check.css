@@ -23,8 +23,7 @@ body{
   grid-template-rows:
   [head] 100px
   [check] auto
-  [submit] auto
-  [foot] 100px;
+  [submit] auto;
   row-gap: 20px;
   font-family: sans-serif;
   background-color: #FFE382;
@@ -109,27 +108,4 @@ div a {
 
 div a:hover{
  background-color: crimson;
-}
-
-
-
-/* フッター */
-footer{
-  grid-row: foot;
-  justify-self: center;
-  align-self: center;
-  font-size: 13px;
-  font-family: 'Raleway', sans-serif;
-  color:#F5F5F5;
-
-}
-/* フッターのバー */
- /* 擬似要素を作成 */
-body::after{
-  grid-row: foot;
-  grid-column: 1 / -1;
-  content: '';
-  background-color:#484B7E;
-  z-index: -1;
-
 }

@@ -1,8 +1,6 @@
 <?php
-
 session_start();
 include("../functions.php");
-include("../config.php");
 check_session_id();
 $pdo = connect_to_db();
 $user_id = $_SESSION['user_id'];
@@ -102,11 +100,11 @@ for ($i = 0; $i < count($completed_task); $i++) {
         </ul>
       </header>
       <section >
-      <div class="output2"></div>
-
-                <div class="output"><?= $output ?></div>
-      </section>
-  
+              <!-- <div class="output2"></div> -->
+              <div class="output">
+                            <?= $output ?>
+              </div>
+      </section> 
 </body>
 
 <!-- java script! -->

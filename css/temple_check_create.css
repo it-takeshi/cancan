@@ -21,11 +21,11 @@ body{
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
-  [head] 100px
+  [title1] 100px
   [check] auto
+  [title2] 100px
   [submit] auto
-  [div] auto
-  [foot] 100px;
+  [div] auto;
   row-gap: 20px;
   font-family: sans-serif;
   background-color: #FFE382;
@@ -36,19 +36,22 @@ body> *{
 }
 
 
-header{
-  grid-row: head;
-  grid-column: 1 / -1;
-  background-color: #373870;
+.title1{
+  grid-row: title1;
+  justify-self: center;
+  align-self: center;
+margin-bottom: 0px;
+padding-top: 30px;
+  
 }
 
-header p {
-  padding-top: 25px;
-  justify-content: end;
-	text-align: center;
-	font-size: 40px;
-	color:#F5F5F5;
-  font-family: 'Raleway', sans-serif;
+.title2{
+  grid-row: title2;
+  justify-self: center;
+  align-self: center;
+margin-bottom: 0px;
+padding-top: 30px;
+  
 }
 
 .check{
@@ -57,12 +60,10 @@ header p {
   grid-template-columns: 1fr 1fr;
 
 }
-.check h2{
-  grid-column: 1 /-1 ;
-}
+
 
 .check img{
-  width: 50px;
+  width: 150px;
 }
 .submit{
   grid-row: submit;
@@ -75,10 +76,16 @@ form p {
   margin-bottom: 20px;
 }
 
+form p label{
+  width: 940px;
+  height: 150px;
+}
+
 input {
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
+  text-align: center;
 }
 
 input[type="submit"]{
@@ -92,6 +99,7 @@ div{
   grid-row: div;
   text-align: center;
 }
+
 div a {
  color:#F5F5F5;
  text-decoration: none;
@@ -109,23 +117,18 @@ div a:hover{
 
 
 
-/* フッター */
-footer{
-  grid-row: foot;
-  justify-self: center;
-  align-self: center;
-  font-size: 13px;
-  font-family: 'Raleway', sans-serif;
-  color:#F5F5F5;
-
-}
-/* フッターのバー */
- /* 擬似要素を作成 */
-body::after{
-  grid-row: foot;
-  grid-column: 1 / -1;
-  content: '';
-  background-color:#484B7E;
-  z-index: -1;
-
+/* ボタンらしく */
+button {
+  align-items:center;
+  display: inline-block;
+  width: 150px;
+  cursor: pointer; /* カーソルを指に */
+  margin: 1em 0; /* まわりの余白 */
+  padding: .7em 1em; /* 文字まわりの余白 */
+  line-height: 1.4; /* 行間 */
+  background: #484B7E;/* 背景色 */
+  color: #FFF; /* 文字色 */
+  font-size: 0.95em; /* フォントサイズ */
+  border-radius: 2.5em; /* 角の丸み */
+  transition: 0.2s; /* ホバーをなめらかに */
 }

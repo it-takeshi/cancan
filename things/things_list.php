@@ -55,13 +55,13 @@ for ($i = 0; $i < count($things); $i++) {
     $output .= "<li><img src='{$things[$i]["picture"]}' width='70px'></li>";
     $output .= "<li><video src='{$things[$i]["movie"]}'controls autoplay muted width='200px' height='133px'></video></li>";
 
-    $output .= "<li>
-                    <form action='../parent/parent_temple_check_create.php' method='POST'>
-                      <input type='hidden' name='template' value={$templates[$i]["template_id"]}>
+    // $output .= "<li>
+    //                 <form action='../parent/parent_temple_check_create.php' method='POST'>
+    //                   <input type='hidden' name='template' value={$templates[$i]["template_id"]}>
                       
-                      <button id='complete_btn' type='submit'>つかう</button>
-                    </form>
-                </li>";
+    //                   <button id='complete_btn' type='submit'>つかう</button>
+    //                 </form>
+    //             </li>";
     $output .= "</ul>";
   }
 
@@ -77,10 +77,8 @@ for ($i = 0; $i < count($things); $i++) {
     <link rel="stylesheet" href="../css/things_list.css">
 </head>
 <body>
-<header>
-      <p><a href="#">Can × Can</a></p>
-</header>
-<h1>もの・ことリスト</h1>
+
+<h2>もの・ことリスト</h2>
 <section>
     <?= $output ?>
 </section>
