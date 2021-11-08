@@ -50,9 +50,10 @@ $output = "";
 for ($i = 0; $i < count($things); $i++) {
   // count()関数で$thingsの配列の数を取る
     $output .= "<ul>";
+    $output .= "<li><img src='{$things[$i]["picture"]}' width='70px'></li>";
     $output .= "<li>{$things[$i]["things_name"]}</li>";
     $output .= "<li>{$things[$i]["memo"]}</li>";
-    $output .= "<li><img src='{$things[$i]["picture"]}' width='70px'></li>";
+    $output .= "<li><img src='../images/movieon.jpg' width='15px' height='10px'></li>";
     $output .= "<li><video src='{$things[$i]["movie"]}'controls autoplay muted width='200px' height='133px'></video></li>";
 
     // $output .= "<li>
@@ -71,21 +72,30 @@ for ($i = 0; $i < count($things); $i++) {
 <html lang="ja" >
 <head>
       <!-- Stylesheets -->
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/things_list.css">
 </head>
 <body>
+<header>
+    <div class="img_title">
+    <img src="../images/dog1.jpg" alt="" width="120px" height="120px">Can × Can
+    </div>
+    </header>
 
-<h2>もの・ことリスト</h2>
-<section>
-    <?= $output ?>
-</section>
-<div class="">
-        <a href="things_input.php">新しく作る</a>
+<h2>やり方をみる・作る</h2>
+<div class="button">
+        <a href="things_input.php">やり方の新規作成</a>
         <a href="../parent/parent_page.php">もどる</a>
       </div>
+<section id="output">
+    <?= $output ?>
+    
+</section>
+
+
 
 </body>
 <!-- java script! -->
@@ -96,6 +106,13 @@ for ($i = 0; $i < count($things); $i++) {
   <script src="../js/bootstrap-datetimepicker.min.js"></script>
 
   <script>
+
+let element = document.getElementById('output');
+let last = element.lastChild;
+
+$('#output.img').click(function(){
+$('last').show();
+});
 
     $(function () {
         $('#ymPicker').datetimepicker({

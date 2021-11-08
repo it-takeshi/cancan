@@ -8,6 +8,7 @@ $child_id = $_SESSION['child_id'];
 $start_datetime = $_POST['start_datetime'];
 $nocompleted_task_status = "0";
 $completed_task_status = "1";
+$parent_checked_task_status = "2";
 
 $sql = 'SELECT * FROM users_table WHERE user_id=:user_id ';
 $stmt = $pdo->prepare($sql);
@@ -56,9 +57,9 @@ if ($status == false) {
     </td>";
       $completed_task_output .= "</tr>";
     }
-    $point = '';
+    // $point = '';
     
-    $point .=  count($completed_task);
+    // $point .=  count($completed_task);
 
   } else {
     $completed_task_output = "<tr><td class='image'></td><td>今はありません</td><td></td><td></td><td></td></tr>";
@@ -70,7 +71,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':child_id', $child_id, PDO::PARAM_INT);
 $stmt->bindValue(':parent_id', $user_id, PDO::PARAM_INT);
 $stmt->bindValue(':task_status', $nocompleted_task_status, PDO::PARAM_STR);
-                                  // $nocompleted_task_status = "0" ←まだ完了のタスク;
+                                  // $nocompleted_task_status = "0" ←未完了のタスク;
 $status = $stmt->execute();
 if ($status == false) {
   $error = $stmt->errorInfo();
@@ -95,6 +96,33 @@ if ($status == false) {
   }
 }
 
+
+$sql = 'SELECT * FROM new_task_table WHERE child_id=:child_id AND parent_id=:parent_id AND task_status=:task_status ORDER BY start_datetime ASC';
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':child_id', $child_id, PDO::PARAM_INT);
+$stmt->bindValue(':parent_id', $user_id, PDO::PARAM_INT);
+$stmt->bindValue(':task_status', $parent_checked_task_status , PDO::PARAM_STR);
+//                                ↑$parent_checked_task_status = "2" 親がチェックしたタスクを取ってくる;
+$status = $stmt->execute();
+if ($status == false) {
+  $error = $stmt->errorInfo();
+  echo json_encode(["error_msg" => "{$error[2]}"]);
+  exit();
+} else {
+  $parent_checked_task = $stmt->fetchALL(PDO::FETCH_ASSOC);
+  if ($parent_checked_task) {
+    
+    for ($i = 0; $i < count($parent_checked_task); $i++) {
+      $point = '';
+    
+      $point .=  count($parent_checked_task);
+    }
+
+  } 
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -112,6 +140,12 @@ if ($status == false) {
 </head>
 
 <body>
+    <header>
+      <div class="img_title">
+    <img src="../images/dog1.jpg" alt="" width="50px" height="50px">Can × Can
+    </div>
+    </header>
+    
       <section class="button">
             <h3>
                 <?= $user_data['name'] ?>さんのマイページ
@@ -144,9 +178,9 @@ if ($status == false) {
 
 
   <ul>
-    <li><a href="../log/logout.php">ログアウト</a></li>
-    <li> <a href="../template/template_list.php">タスク</a></li>
-    <li> <a href="../things/things_list.php">もの・こと</a></li>
+  <li><a href="../log/logout.php">ログアウト</a></li> 
+    <li> <a href="../template/template_list.php">タスクを登録</a></li>
+    <li> <a href="../things/things_list.php">やり方を登録</a></li>
   </ul>
 
 

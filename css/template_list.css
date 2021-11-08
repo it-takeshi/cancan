@@ -10,17 +10,17 @@ body{
 * {
 	margin: 0;
 }
-img {
+/* img {
 	width: 100%;
 	height: auto;
-}
+} */
 
 body{
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows: 
-        
-            [h2] 100px
+            [head] 160px
+            [h2] 50px
             [section] auto
             [div] auto;
   row-gap: 0px;
@@ -33,13 +33,33 @@ body > *{
     grid-column: 2 / -2;
 }
 
+header{
+  grid-row:head ;
+  grid-column: 1 / -1;
+  background-color:#ffffff;
+  
+}
+
+.img_title{
+  grid-row: head;
+  text-align: center;
+  justify-content: center;
+  font-size: 50px;
+	color:#373870;;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  padding-top: 50px;
+  
+}
 
 h2{
   grid-row: h2;
    justify-self: center;
     align-self: center;
-  margin-bottom: 0px;
-  padding-top: 30px;
+  margin-bottom: 30px;
+  padding-top: 50px;
+  margin-top: 20px;
+
 
 }
 
@@ -87,11 +107,6 @@ section button{
 }
 
 
-section button:hover{
- background-color: crimson;
-}
-
-
 div{
   grid-row: div;
   text-align: center;
@@ -110,9 +125,6 @@ div a {
  margin-left: 30px;
 }
 
-div a:hover{
- background-color: crimson;
-}
 
 
 /* footer{

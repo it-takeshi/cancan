@@ -8,19 +8,19 @@ body{
 }
 
 /* 基本設定 */
-/* 下記の＊は全ての要素という意味 */
 * {
 	margin: 0;
 }
-img {
+/* img {
 	width: 100%;
 	height: auto;
-}
+} */
 
 body{
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
+  [head] 180px
   [title1] 100px
   [check] auto
   [title2] 100px
@@ -35,6 +35,24 @@ body> *{
   grid-column: 2 / -2;
 }
 
+header{
+  grid-row:head ;
+  grid-column: 1 / -1;
+  background-color:#ffffff;
+}
+
+.img_title{
+  grid-row: head;
+  text-align: center;
+  justify-content: center;
+  font-size: 50px;
+	color:#373870;;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  margin-top: 30px;
+  
+}
 
 .title1{
   grid-row: title1;
@@ -54,16 +72,17 @@ padding-top: 30px;
   
 }
 
-.check{
+/* .check{
   grid-row: check;
   display: grid;
   grid-template-columns: 1fr 1fr;
 
 }
-
+ */
 
 .check img{
   width: 150px;
+  padding-top: 40px;
 }
 .submit{
   grid-row: submit;
@@ -111,24 +130,21 @@ div a {
  background-color:#484B7E;
 }
 
-div a:hover{
- background-color: crimson;
-}
-
 
 
 /* ボタンらしく */
 button {
   align-items:center;
   display: inline-block;
-  width: 150px;
+  width: 140px;
+  height: 60px;
   cursor: pointer; /* カーソルを指に */
   margin: 1em 0; /* まわりの余白 */
   padding: .7em 1em; /* 文字まわりの余白 */
   line-height: 1.4; /* 行間 */
   background: #484B7E;/* 背景色 */
   color: #FFF; /* 文字色 */
-  font-size: 0.95em; /* フォントサイズ */
-  border-radius: 2.5em; /* 角の丸み */
+  font-size: 1.25em; /* フォントサイズ */
+  border-radius: 10px;
   transition: 0.2s; /* ホバーをなめらかに */
 }

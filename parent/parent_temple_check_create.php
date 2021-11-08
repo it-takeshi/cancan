@@ -84,22 +84,27 @@ if ($status == false) {
 </head>
 
 <body>
- 
-  <h2 class="title1">内容確認</h2>
+<header>
+    <div class="img_title">
+    <img src="../images/dog1.jpg" alt="" width="90px" height="90px">Can × Can
+    </div>
+    </header>
+
+  <h2 class="title1">やることを作成してください</h2>
   
-  <section class="check">   
-      <div>
-        <label for="">がぞう</label>
+  <section class="check"> 
+        <div>
+
+          <p><?php echo $template_data["template_name"]; ?>のテンプレートを使用中</p>
+        </div> 
+        <div><a href="../template/template_list.php">変更する</a></div>
+      <div class="check_img">  
             <img src='<?= $template_data['template_image'];?>' width='50px'>
       </div>
-      <div>
-        <label for="">やること</label>
-          <p><?php $template_data["template_name"] ?></p>
-            <p><?php echo $template_data["template_name"]; ?></p>
-        </div>
+    
       </section>
 
-  <h2 class="title2"> にゅうりょく</h2>
+  <h2 class="title2">はじめる日時と色を選択してください</h2>
 
   <section class="submit">  
       <form action="parent_task_create.php" method="POST" enctype="multipart/form-data">
@@ -129,16 +134,13 @@ if ($status == false) {
     <input type="hidden" name="filename_to_save" value="<?= $template_data['template_image'] ?>"> 
 
     <input type="hidden" name="task_name" value="<?= $template_data["template_name"] ?>"> 
-    <p> <button type="submit">とうろく</button></p>
-   <p> 
+    <div> <button type="submit" >とうろく</button></div>
+
  
   </form>
   </section>
 
-    <div>
-      <a href="../template/template_list.php">テンプレートリストへ</a></p>
-    </div>
-
+   
  
 </body>
 

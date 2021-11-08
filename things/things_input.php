@@ -25,6 +25,12 @@ $pdo = connect_to_db();
 </head>
 
 <body class="">
+<header>
+    <div class="img_title">
+    <img src="../images/dog1.jpg" alt="" width="50px" height="50px">Can × Can
+    </div>
+    </header>
+
 
 <h2>もの・こと入力</h2>
 <section>

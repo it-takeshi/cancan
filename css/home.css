@@ -9,7 +9,6 @@ body{
 }
 
 /* 基本設定 */
-/* 下記の＊は全ての要素という意味 */
 * {
 	margin: 0;
 }
@@ -24,11 +23,9 @@ body{
   grid-template-rows: 
             [head] 100px
             [hero] auto
-            [section] auto
-            [foot] 100px;
+            [section] auto;
   /* row-gap: 20px; */
   font-family: sans-serif;
- 
 }
 
 body > *{
@@ -38,9 +35,7 @@ body > *{
 header{
   grid-row: head;
   grid-column: 1 /  -1;
-  /* background-color: #484B7E; */
   background-color: #373870;
-  
 }
 
 header p {
@@ -57,38 +52,11 @@ header a {
   text-decoration: none;
 }
 
-nav{
-  grid-row: head;
-  justify-self: center;
-  align-self: flex-end;
-  
-}
-
-nav ul{
-display: grid;
-grid-auto-flow: column;
-column-gap: 20px;
-list-style-type: none;
-padding: 0;
-
-}
-
-nav a {
-  color:#F5F5F5;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: bold;
-}
-nav a:hover{
-  color:#484B7E;
-}
-
 figure.hero  {
   grid-row: hero ;
 	grid-column: 1 / -1;
-                /* ↓△ */
- background-color: #FFE382;
- z-index: -1;
+  background-color: #FFE382;
+  z-index: -1;
 }
 
 .hero img{
@@ -96,12 +64,6 @@ figure.hero  {
   height: 320px;
   object-fit: cover;
   
-}
-
-.circle{
-
-    /* border-radius: 50%; */
-
 }
 
 section{
@@ -112,6 +74,8 @@ section{
   /* grid-template-columns: 1fr 1fr; 
   row-gap: 20px;
   column-gap: 10px; */
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 section .parent_menu,.child_menu{
   grid-column: 1 / -1;
@@ -125,14 +89,11 @@ section .parent_menu,.child_menu{
   display: grid;
 grid-auto-flow: column;
 column-gap: 5px;
-padding: 0;
+padding-bottom: 15px;
 }
 
-section a:hover{
-  text-decoration: underline;
-}
 .child_block{
-  
+  margin: auto;
 }
 
 div{
@@ -152,53 +113,27 @@ div a {
  background-color: #373870;
 }
 
-div a:hover{
- background-color: crimson;
-}
-
-/* フッター */
-footer{
-  grid-row: foot;
-  justify-self: center;
-  align-self: center;
-  font-size: 13px;
-  font-family: 'Raleway', sans-serif;
-  color:#F5F5F5;
-
-}
-/* フッターのバー */
- /* 擬似要素を作成 */
-body::after{
-  grid-row: foot;
-  grid-column: 1 / -1;
-  content: '';
-  background-color: #373870;
-  z-index: -1;
-
-}
-
 /* PC版画面設定 */
 @media(min-width:768px){
 
- body{
-   grid-template-columns: 0.2fr repeat(6,1fr) 0.2fr;
-   column-gap: 5%;
-   grid-template-rows:
-   [head] 100px
-   [hero] auto
-   [section] auto
-   [foot] 100px;
+  body{
+    grid-template-columns: 0.2fr repeat(6,1fr) 0.2fr;
+    column-gap: 5%;
+    grid-template-rows:
+    [head] 100px
+    [hero] auto
+    [section] auto;
 
- }
+  }
 
 
- figure.hero  {
-  grid-row: hero ;
-	grid-column: 3 / -3;
-                /* ↓△ */
- background-color: #FFE382;
- z-index: -1;
-}
+  figure.hero  {
+    grid-row: hero ;
+    grid-column: 3 / -3;
+                  /* ↓△ */
+  background-color: #FFE382;
+  z-index: -1;
+  }
 
 .hero img{
   vertical-align: bottom;

@@ -9,15 +9,16 @@ body{
 * {
 	margin: 0;
 }
-img {
+/* img {
 	width: 100%;
 	height: auto;
-}
+} */
 
 body{
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
+  [head] 180px
   [h2] 100px
   [check] auto
   [submit] auto;
@@ -29,6 +30,28 @@ body{
 body> *{
   grid-column: 2 / -2;
 }
+
+
+header{
+  grid-row:head ;
+  grid-column: 1 / -1;
+  background-color:#ffffff;
+}
+
+.img_title{
+  grid-row: head;
+  text-align: center;
+  justify-content: center;
+  font-size: 50px;
+	color:#373870;;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  margin-top: 30px;
+  
+}
+
+
 
 h2{
 	grid-row: h2;
@@ -83,11 +106,6 @@ padding-top: 60px;
 }
 
 
-.check button:hover{
- background-color: crimson;
-}
-
-
 .submit{
   grid-row: submit;
   justify-self: center;
@@ -118,3 +136,20 @@ div a {
   background-color: crimson;
   }
 
+
+/* ボタンらしく */
+button {
+  align-items:center;
+  display: inline-block;
+  width: 230px;
+  height: 90px;
+  cursor: pointer; /* カーソルを指に */
+  margin: 1em 0; /* まわりの余白 */
+  padding: .7em 1em; /* 文字まわりの余白 */
+  line-height: 1.4; /* 行間 */
+  background: #373870;
+  color: #FFF; /* 文字色 */
+  font-size: 2.25em; /* フォントサイズ */
+  border-radius: 10px;
+  transition: 0.2s; /* ホバーをなめらかに */
+}

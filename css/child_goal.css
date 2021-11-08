@@ -61,10 +61,6 @@ header  a {
   border-radius: 10px;
   background-color:#484B7E;
  }
- 
- header  a:hover{
-  background-color: crimson;
- }
 
 .c-button {
   appearance: none;

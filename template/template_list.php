@@ -49,14 +49,21 @@ for ($i = 0; $i < count($templates); $i++) {
 <html lang="ja" >
 <head>
       <!-- Stylesheets -->
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/template_list.css">
 </head>
   <body>
+
+  <header>
+      <div class="img_title">
+    <img src="../images/dog1.jpg" alt="" width="90px" height="90px">Can × Can
+    </div>
+    </header>
   
-  <h2>つかうテンプレートを<br>えらんでください</h2>
+  <h2>つかうテンプレートをえらんでください</h2>
   <section>
     <?= $output ?>
     </section>

@@ -25,11 +25,11 @@ $pdo = connect_to_db();
 </head>
 
 <body class="">
-
 <header>
-        <a href="index.html">Can × Can</a>
-  </header>
-
+    <div class="img_title">
+    <img src="../images/dog1.jpg" alt="" width="30px" height="30px">Can × Can
+    </div>
+    </header>
 
 <section>
     

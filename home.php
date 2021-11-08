@@ -13,14 +13,7 @@
     <header>
         <p><a href="#">Can × Can</a></p>
     </header>
-    <nav>
-            <ul>
-            <li><a href="../home.php">トップ</a></li>
-            <li><a href="../about.php">サイトについて</a></li>
-            <li><a href="../contact.php">お問い合わせ</a></li>
-            </ul>
-    </nav> 
-    <!--  -->
+  
     <figure class="hero">
       <img src="images/dog1.jpg" width="100px" alt="できる！" class="circle">
     </figure>
@@ -44,29 +37,7 @@
             </p>
           </div>
 
-
-          <!-- <div>
-            <a href="account_create/parent_create.php">
-              <figure><img src="images/star-6577079__480.webp" alt=""></figure>
-              <h3>新規登録</h3>
-            </a>
-          </div>
-          <div>
-            <a href="log/parent_login.php">
-              <figure><img src="images/star-6577079__480.webp" alt=""></figure>
-              <h3>ログイン</h3>
-            </a>
-          </div>
-          <div>
-          <h2 class="child_menu">お子様用メニュー</h2> 
-            <a href="log/child_login.php">
-              <figure><img src="images/star-6577079__480.webp" alt=""></figure>
-              <h3>ログイン</h3>
-            </a>
-          </div> -->
     </section>
-    <!--  -->
-<!--  -->
-<footer>© Can & Can</footer>
+
 </body>
 </html>

@@ -10,6 +10,7 @@ $task_status = "0";
 // ↓親が確認済みのタスクを表示させる変数
 $parent_checked_task_status = "2";
 
+
 // 当日情報をGETで受信（ymd)
 $ymd = $_GET['ymd'];
 // var_dump($ymd);
@@ -196,9 +197,7 @@ if ($parent_checked_task) {
                                 <!-- <img src="../images/bells-2957570__340.webp" alt="" width="40px"> -->
                         </button> 
                         </form>
-                        <audio id="click_sound" preload="auto">
-                              <source src="../audio/click21.mp3"  type="audio/mp3">
-                        </audio>
+                      
 
                     <!-- たっせい⭐️ボタン -->
 
@@ -242,6 +241,9 @@ if ($parent_checked_task) {
 <div>
     <input type="button" value="こうしん" onclick="koshin()"  id="koshin">
 </div>
+<audio id="click_sound" preload="auto">
+                              <source src="../audio/click21.mp3"  type="audio/mp3">
+                        </audio>
         <audio id="click_sound2" preload="auto">
               <source src="../audio/click5.mp3"  type="audio/mp3">
         </audio>
@@ -287,6 +289,7 @@ $("#complete_btn").on("click", function() {
   }, 2000);
 });
 
+
  function koshin() {
       location.reload();
 
@@ -311,6 +314,7 @@ $("#complete_btn").on("click", function() {
         $(this).addClass('form-select').addClass($(this).val());
       });
     });
+
 
 
 </script>

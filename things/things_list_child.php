@@ -71,6 +71,7 @@ for ($i = 0; $i < count($things); $i++) {
 <html lang="ja" >
 <head>
       <!-- Stylesheets -->
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
@@ -78,7 +79,13 @@ for ($i = 0; $i < count($things); $i++) {
 </head>
 <body>
 
-<h2>もの・ことリスト</h2>
+<header>
+    <div class="img_title">
+    <img src="../images/dog1.jpg" alt="" width="120px" height="120px">Can × Can
+    </div>
+</header>
+
+<h2>やり方をみる</h2>
 <section>
     <?= $output ?>
 </section>

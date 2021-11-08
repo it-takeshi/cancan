@@ -82,10 +82,7 @@ div a {
   background-color:#373870;
   }
 
-  div a:hover{
-  background-color: crimson;
-  }
-
+ 
 /* フッター */
 footer{
   grid-row: foot;

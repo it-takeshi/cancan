@@ -6,8 +6,6 @@
 // データベース名：heroku_e72eea33a62837b
 
 
-
-
 function connect_to_db()
 {
                     

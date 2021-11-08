@@ -70,6 +70,11 @@ if (isset($_FILES['upvideo']) && $_FILES['upvideo']['error'] == 0) {
 </head>
 
 <body>
+<header>
+    <div class="img_title">
+    <img src="../images/dog1.jpg" alt="" width="120px" height="120px">Can × Can
+    </div>
+    </header>
 <h2>ないようをかくにん</h2>
 <section class="check">
   

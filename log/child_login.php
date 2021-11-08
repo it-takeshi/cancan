@@ -9,8 +9,10 @@
 <link rel="stylesheet" href="../css/login.css"> 
 </head>
 <body>
-    <header>
-        <p><a href="#">Can × Can</a></p>
+<header>
+      <div class="img_title">
+    <img src="../images/dog1.jpg" alt="" width="40px" height="40px">Can × Can
+    </div>
     </header>
     <section class="login"> 
                             <h2>お子様ログイン</h2>
@@ -19,14 +21,14 @@
                                   <h3>さあ、はじめよう！</h3>
                                   <p>
                                     <label>あなたのおなまえ：
-                                          <input type="text" name="my_name">
+                                          <input type="text" name="my_name" autocomplete="off">
                                     </label>
                                   </p>
 
                                   <p>
                                   <label>
                                   お父さんまたはお母さんのおなまえ：
-                                  <input type="text" name="parent_name">
+                                  <input type="text" name="parent_name" autocomplete="off">
                                   </label>
                                   </p>
 
@@ -35,9 +37,6 @@
                                   </p>
                               </form>
       </section>
-      <div class="goto_home">
-                            <a class="button" href="../home.php">ホーム画面へ</a>
-      </div>
-      <footer>© Can & Can</footer>
+    
 </body>
 </html>
