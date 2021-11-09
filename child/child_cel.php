@@ -57,7 +57,7 @@ width: 100%;
 	position: relative;
 	background: url(../images/cracker_brwon.jpg);
 	background-size: auto 100%;
-	animation: bg-slider 23s linear infinite; 
+	animation: bg-slider 18s linear infinite; 
 	
 }
 @keyframes bg-slider {
@@ -129,7 +129,7 @@ var test6 = anime({
 
  setTimeout(function(){
   window.location.href = 'child_goal.php';
-}, 4*1000);
+}, 3*1000);
 </script>
 </body>
 </html>

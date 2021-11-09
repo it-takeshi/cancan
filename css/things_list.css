@@ -15,14 +15,13 @@ body{
 
 body{
   display: grid;
-  grid-template-columns: 20px 1fr 20px;
+  grid-template-columns: 70px 1fr 20px;
   grid-template-rows: 
             [head] 180px
             [h2] 100px
             [div] auto
-            [section] auto
-            [div] auto;
-  row-gap: 0px;
+            [section] auto;
+  row-gap: 40px;
   font-family: sans-serif;
   background-color: #FFE382;
 }
@@ -35,7 +34,7 @@ header{
   grid-row:head ;
   grid-column: 1 / -1;
   background-color:#ffffff;
-  width: 1040px;
+  width: 1180PX;
 }
 
 .img_title{
@@ -58,7 +57,7 @@ h2{
     align-self: center;
   margin-bottom: 0px;
   padding-top: 30px;
-  font-size: 30px;
+  font-size: 40px;
 
 }
 
@@ -85,17 +84,17 @@ section{
 }
 section li{
   font-size: 20px;
-  text-align: center;
-  justify-content: center;
-  width: 200px;
-  font-size: 20px;
-  line-height:150%;
   justify-self: center;
+  align-self: center;
+  width: 220px;
+  font-size: 25px;
+  line-height:150%;
+  padding-left: 20px;
 
 }  
 
 section img{
-	width: 150px ;
+	width: 100px ;
 	height: auto;
 }
 

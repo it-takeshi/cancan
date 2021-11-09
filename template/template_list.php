@@ -30,7 +30,7 @@ if ($status == false) {
 $output = "";
 for ($i = 0; $i < count($templates); $i++) {
   // count()関数で$templatesの配列の数を取る
-     $output .= "<ul>";
+    $output .= "<ul>";
     $output .= "<li><img src='{$templates[$i]["template_image"]}' width='100px'></li>";
     $output .= "<li>{$templates[$i]["template_name"]}</li>";
     $output .= "<li>
@@ -40,8 +40,11 @@ for ($i = 0; $i < count($templates); $i++) {
                       <button id='complete_btn' type='submit' >つかう</button>
                     </form>
                 </li>";
+    // $output .= "<li><a href='template_delete.php?id={$templates[$i]["template_id"]}'>削除</a></li>";
+
     $output .= "</ul>";
   }
+
 
 ?>
 
@@ -53,6 +56,7 @@ for ($i = 0; $i < count($templates); $i++) {
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/template_list.css">
 </head>
   <body>
@@ -68,7 +72,7 @@ for ($i = 0; $i < count($templates); $i++) {
     <?= $output ?>
     </section>
     
-    <div class="">
+    <div class="button">
     <a href="template_input.php">あらたに作る</a>
         <a href="../parent/parent_page.php">もどる</a>
       </div>
@@ -118,5 +122,4 @@ for ($i = 0; $i < count($templates); $i++) {
 </body>
 
 </html>
-
 

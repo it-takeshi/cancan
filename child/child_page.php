@@ -226,7 +226,7 @@ if ($parent_checked_task) {
 </div>
 </div>
 </div>
-<div class="button" id="sound3_button"><a href="../things/things_list_child.php">もの・ことかくにん</a></div>
+<div class="button" id="sound3_button"><a href="../things/things_list_child.php">やりかた かくにん</a></div>
 </main>
 
 <section id="parent_checked_task_output">

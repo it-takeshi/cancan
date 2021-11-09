@@ -10,10 +10,10 @@ body{
 * {
 	margin: 0;
 }
-/* img {
+/* * img {
 	width: 100%;
 	height: auto;
-} */
+}  */
 
 body{
   display: grid;
@@ -23,7 +23,7 @@ body{
             [h2] 50px
             [section] auto
             [div] auto;
-  row-gap: 0px;
+  row-gap: 30px;
   font-family: sans-serif;
   background-color: #FFE382;
  
@@ -71,6 +71,7 @@ section{
 /* column-gap: -25px; */
 	row-gap: 30px;
   padding-top: 60px;
+
 }
 
 
@@ -110,6 +111,7 @@ section button{
 div{
   grid-row: div;
   text-align: center;
+  
 }
 div a {
  color:#F5F5F5;

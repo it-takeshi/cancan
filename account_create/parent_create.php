@@ -16,18 +16,11 @@
 
 <body class="">
 
-	<header>
-		<p>	<a href="#">Can × Can</a></p>
-	</header>
-
-	<nav>
-		<ul>
-		<li><a href="../home.php">トップ</a></li>
-		<li><a href="../about.php">サイトについて</a></li>
-		<li><a href="../contact.php">お問い合わせ</a></li>
-		</ul>
-	</nav>
-
+<header>
+      <div class="img_title">
+    <img src="../images/dog1.jpg" alt="" width="50px" height="50px">Can × Can
+    </div>
+    </header>
 
 	<section>
 		<h1>保護者の方 新規登録</h1>
@@ -70,7 +63,7 @@
       <a class="button" href="../home.php">ホーム画面へ</a>
   </div>
 
-	<footer>© Can & Can</footer>
+
 
 </body>
 </html>

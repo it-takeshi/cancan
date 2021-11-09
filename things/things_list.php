@@ -53,16 +53,8 @@ for ($i = 0; $i < count($things); $i++) {
     $output .= "<li><img src='{$things[$i]["picture"]}' width='70px'></li>";
     $output .= "<li>{$things[$i]["things_name"]}</li>";
     $output .= "<li>{$things[$i]["memo"]}</li>";
-    $output .= "<li><img src='../images/movieon.jpg' width='15px' height='10px'></li>";
+    $output .= "<li><img src='../images/974542.png' width='15px' height='10px'></li>";
     $output .= "<li><video src='{$things[$i]["movie"]}'controls autoplay muted width='200px' height='133px'></video></li>";
-
-    // $output .= "<li>
-    //                 <form action='../parent/parent_temple_check_create.php' method='POST'>
-    //                   <input type='hidden' name='template' value={$templates[$i]["template_id"]}>
-                      
-    //                   <button id='complete_btn' type='submit'>つかう</button>
-    //                 </form>
-    //             </li>";
     $output .= "</ul>";
   }
 
@@ -85,6 +77,7 @@ for ($i = 0; $i < count($things); $i++) {
     </div>
     </header>
 
+   
 <h2>やり方をみる・作る</h2>
 <div class="button">
         <a href="things_input.php">やり方の新規作成</a>

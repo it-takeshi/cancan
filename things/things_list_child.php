@@ -50,9 +50,10 @@ $output = "";
 for ($i = 0; $i < count($things); $i++) {
   // count()関数で$thingsの配列の数を取る
     $output .= "<ul>";
+    $output .= "<li><img src='{$things[$i]["picture"]}' width='70px'></li>";
     $output .= "<li>{$things[$i]["things_name"]}</li>";
     $output .= "<li>{$things[$i]["memo"]}</li>";
-    $output .= "<li><img src='{$things[$i]["picture"]}' width='70px'></li>";
+    $output .= "<li><img src='../images/974542.png' width='15px' height='10px'></li>";
     $output .= "<li><video src='{$things[$i]["movie"]}'controls autoplay muted width='200px' height='133px'></video></li>";
 
     // $output .= "<li>
@@ -75,7 +76,7 @@ for ($i = 0; $i < count($things); $i++) {
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="../css/things_list.css">
+    <link rel="stylesheet" href="../css/things_list_child.css">
 </head>
 <body>
 
