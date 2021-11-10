@@ -15,18 +15,12 @@
 
 <body class="">
 
-	<header>
-		<a href="index.html">Can × Can</a>
-	</header>
 
-	<nav>
-		<ul>
-		<li><a href="index.html">トップ</a></li>
-		<li><a href="about.html">サイトについて</a></li>
-		<li><a href="contact.html">お問い合わせ</a></li>
-		</ul>
-	</nav>
-
+<header>
+      <div class="img_title">
+    <img src="../images/dog1.jpg" alt="" width="50px" height="50px">Can × Can
+    </div>
+    </header>
       <section>
 
             <h1>お子様を新規登録</h1>
@@ -49,7 +43,7 @@
             <a class="button" href="../parent/parent_page.php">マイページ画面へ</a>
       </div>
 
-      <footer>© Can & Can</footer>
+   
 
 </body>
 </html>

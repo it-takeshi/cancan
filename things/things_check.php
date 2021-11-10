@@ -60,6 +60,7 @@ if (isset($_FILES['upvideo']) && $_FILES['upvideo']['error'] == 0) {
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
 <title>ないようをかくにん</title>
 <!-- Stylesheets -->
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -72,7 +73,7 @@ if (isset($_FILES['upvideo']) && $_FILES['upvideo']['error'] == 0) {
 <body>
 <header>
     <div class="img_title">
-    <img src="../images/dog1.jpg" alt="" width="120px" height="120px">Can × Can
+    <img src="../images/dog1.jpg" alt="" width="50px" height="50px">Can × Can
     </div>
     </header>
 <h2>ないようをかくにん</h2>

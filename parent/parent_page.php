@@ -89,6 +89,7 @@ if ($status == false) {
       $nocompleted_task_output .= "<td>{$start_time_two}</td>";
       $nocompleted_task_output .= "<td>{$nocompleted_task[$i]["task_name"]}</td>";
       $nocompleted_task_output .= "<td><img src='{$nocompleted_task[$i]["image"]}' width='20px'></td>";
+      //  $nocompleted_task_output .= "<td><a href='task_delete.php?id={$nocompleted_task[$i]["task_id"]}'>削除</a></td>";
       $nocompleted_task_output .= "</tr>";
     }
   } else {
@@ -179,8 +180,8 @@ if ($status == false) {
 
   <ul>
   <li><a href="../log/logout.php">ログアウト</a></li> 
-    <li> <a href="../template/template_list.php">タスクを登録</a></li>
-    <li> <a href="../things/things_list.php">やり方を登録</a></li>
+    <li> <a href="../template/template_list.php">タスク登録</a></li>
+    <li> <a href="../things/things_list.php">やり方登録</a></li>
   </ul>
 
 

@@ -55,6 +55,7 @@ for ($i = 0; $i < count($things); $i++) {
     $output .= "<li>{$things[$i]["memo"]}</li>";
     $output .= "<li><img src='../images/974542.png' width='15px' height='10px'></li>";
     $output .= "<li><video src='{$things[$i]["movie"]}'controls autoplay muted width='200px' height='133px'></video></li>";
+    // $output .= "<li><a href='things_delete.php?id={$things[$i]["things_id"]}'>削除</a></li>";
     $output .= "</ul>";
   }
 
@@ -63,6 +64,8 @@ for ($i = 0; $i < count($things); $i++) {
 <!DOCTYPE html>
 <html lang="ja" >
 <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width">
       <!-- Stylesheets -->
       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">

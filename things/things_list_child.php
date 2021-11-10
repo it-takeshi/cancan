@@ -71,6 +71,8 @@ for ($i = 0; $i < count($things); $i++) {
 <!DOCTYPE html>
 <html lang="ja" >
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
       <!-- Stylesheets -->
       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
